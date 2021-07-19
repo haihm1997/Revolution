@@ -12,6 +12,10 @@ public enum RevolutionError: Error {
     case getMovieListFalied
     case lostInternetConnection
     case tokenInvalids
+    case noProductIDsFound
+    case noProductsFound
+    case paymentWasCancelled
+    case productRequestFailed
     case other(error: Error)
     case undefine
 }
@@ -30,6 +34,14 @@ public extension RevolutionError {
             return error.localizedDescription
         case .undefine:
             return "Undefined error!"
+        case .noProductIDsFound:
+            return "Không tìm thấy id sản phẩm."
+        case .noProductsFound:
+            return "Không tìm thấy sản phẩm nào."
+        case .productRequestFailed:
+            return "Không thể lấy thông tin sản phẩm. Vui lòng thử lại sau."
+        case .paymentWasCancelled:
+            return "Thanh toán đã bị huỷ."
         }
     }
     

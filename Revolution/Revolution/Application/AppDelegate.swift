@@ -18,7 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         self.window = window
         
+        IAPManager.shared.startObserving()
+        
         return true
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        IAPManager.shared.stopObserving()
     }
 
 
