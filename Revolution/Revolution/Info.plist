@@ -20,6 +20,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Cho phép Yummy Photo sử dụng Camera của bạn</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Cho phép Yummy Photo sử dụng Camera của bạn</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Cho phép Yummy Photo sử dụng Camera của bạn</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

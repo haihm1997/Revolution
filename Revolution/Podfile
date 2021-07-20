@@ -15,6 +15,8 @@ target 'Revolution' do
     pod 'Kingfisher', '~> 6.0'
     pod 'RxDataSources'
     pod 'FittedSheets'
+    pod 'YPImagePicker'
+    pod 'ZLImageEditor'
 
   target 'RevolutionTests' do
     inherit! :search_paths
