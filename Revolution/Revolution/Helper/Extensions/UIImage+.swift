@@ -16,6 +16,7 @@ extension UIImage {
         case tabBarAddPhoto = "ic_add_photo"
         case tabBarHome = "ic_tabbar_home"
         case tabBarAccount = "ic_tabbar_account"
+        case homeEmpty = "home_empty"
     }
     
     convenience init?(name: Name) {

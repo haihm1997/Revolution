@@ -21,7 +21,7 @@ enum Constant {
         static let shadowPathHeight: CGFloat = 2
         static let header: CGFloat = 56
         static let containerHeight: CGFloat = header + SafeArea.topPadding
-        static let totalHeight = header + SafeArea.topPadding + shadowPathHeight
+        static let totalHeight = 58
     }
     
     enum SafeArea {

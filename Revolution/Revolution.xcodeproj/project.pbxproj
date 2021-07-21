@@ -93,6 +93,8 @@
 		BCB37A9326A87D71008BF43A /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCB37A8326A87D71008BF43A /* Roboto-Bold.ttf */; };
 		BCB37A9426A87D71008BF43A /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCB37A8426A87D71008BF43A /* Roboto-Thin.ttf */; };
 		BCB37A9526A87D71008BF43A /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCB37A8526A87D71008BF43A /* Roboto-Black.ttf */; };
+		BCB37A9826A884EF008BF43A /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37A9726A884EE008BF43A /* HomeHeaderView.swift */; };
+		BCB37A9A26A885AE008BF43A /* HomeEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37A9926A885AE008BF43A /* HomeEmptyView.swift */; };
 		EF80CA6EB18AC64138296942 /* Pods_RevolutionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF3CEE370FF81519570C06E /* Pods_RevolutionTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -209,6 +211,8 @@
 		BCB37A8326A87D71008BF43A /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		BCB37A8426A87D71008BF43A /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		BCB37A8526A87D71008BF43A /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		BCB37A9726A884EE008BF43A /* HomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		BCB37A9926A885AE008BF43A /* HomeEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEmptyView.swift; sourceTree = "<group>"; };
 		C1D77E7C9D1F268D5B666F74 /* Pods-RevolutionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RevolutionTests.release.xcconfig"; path = "Target Support Files/Pods-RevolutionTests/Pods-RevolutionTests.release.xcconfig"; sourceTree = "<group>"; };
 		E4F579DD9869ED2BE0003932 /* Pods-Revolution-RevolutionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revolution-RevolutionUITests.debug.xcconfig"; path = "Target Support Files/Pods-Revolution-RevolutionUITests/Pods-Revolution-RevolutionUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF0F0CA684C57536DE8DB54C /* Pods-Revolution-RevolutionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revolution-RevolutionUITests.release.xcconfig"; path = "Target Support Files/Pods-Revolution-RevolutionUITests/Pods-Revolution-RevolutionUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -412,6 +416,7 @@
 		BC481E0926A5D21B00C8A9AE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BCB37A9626A884E1008BF43A /* Items */,
 				BC481E0C26A5D23000C8A9AE /* HomeViewController.swift */,
 			);
 			path = Views;
@@ -751,6 +756,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		BCB37A9626A884E1008BF43A /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				BCB37A9926A885AE008BF43A /* HomeEmptyView.swift */,
+				BCB37A9726A884EE008BF43A /* HomeHeaderView.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		F580C3AF1CD823219837F3AB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1059,6 +1073,7 @@
 				BC481E3D26A5D34A00C8A9AE /* MovieInjectorType.swift in Sources */,
 				BC481E0726A5D1F500C8A9AE /* UIColor+.swift in Sources */,
 				BC481E3B26A5D34A00C8A9AE /* DomainConvertible.swift in Sources */,
+				BCB37A9826A884EF008BF43A /* HomeHeaderView.swift in Sources */,
 				BC481E0D26A5D23000C8A9AE /* HomeViewController.swift in Sources */,
 				BC481E6F26A5D39A00C8A9AE /* Network.swift in Sources */,
 				BC481E7926A5D39A00C8A9AE /* Single+DomainMapping.swift in Sources */,
@@ -1072,6 +1087,7 @@
 				BC481E7126A5D39A00C8A9AE /* NetworkLogger.swift in Sources */,
 				BC481E8426A5D68B00C8A9AE /* IAPManager.swift in Sources */,
 				BC481E0626A5D1F500C8A9AE /* UIImage+.swift in Sources */,
+				BCB37A9A26A885AE008BF43A /* HomeEmptyView.swift in Sources */,
 				BC481E0226A5D1F500C8A9AE /* String+.swift in Sources */,
 				BCB37A6226A87A27008BF43A /* TabBarItemView.swift in Sources */,
 				BC481E7326A5D39A00C8A9AE /* NetworkConfiguration.swift in Sources */,

@@ -61,7 +61,9 @@ class TabBarController: UITabBarController {
         var controllers: [UIViewController] = []
         
         let homeVC = HomeViewController()
-        controllers.append(homeVC)
+        let homeNav = UINavigationController(rootViewController: homeVC)
+        homeNav.setNavigationBarHidden(true, animated: false)
+        controllers.append(homeNav)
         
         let emptyVC = UIViewController()
         controllers.append(emptyVC)
