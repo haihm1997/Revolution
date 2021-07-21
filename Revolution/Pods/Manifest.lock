@@ -6,6 +6,29 @@ PODS:
   - MBProgressHUD (1.2.0)
   - "NSObject+Rx (5.1.0)":
     - RxSwift (~> 5.1)
+  - NYTPhotoViewer (5.0.5):
+    - NYTPhotoViewer/AnimatedGifSupport (= 5.0.5)
+    - NYTPhotoViewer/Core (= 5.0.5)
+  - NYTPhotoViewer/AnimatedGifSupport (5.0.5):
+    - NYTPhotoViewer/Core
+    - PINRemoteImage/iOS (~> 3.0.1)
+    - PINRemoteImage/PINCache
+  - NYTPhotoViewer/Core (5.0.5)
+  - PINCache (3.0.3):
+    - PINCache/Arc-exception-safe (= 3.0.3)
+    - PINCache/Core (= 3.0.3)
+  - PINCache/Arc-exception-safe (3.0.3):
+    - PINCache/Core
+  - PINCache/Core (3.0.3):
+    - PINOperation (~> 1.2.1)
+  - PINOperation (1.2.1)
+  - PINRemoteImage/Core (3.0.3):
+    - PINOperation
+  - PINRemoteImage/iOS (3.0.3):
+    - PINRemoteImage/Core
+  - PINRemoteImage/PINCache (3.0.3):
+    - PINCache (~> 3.0.3)
+    - PINRemoteImage/Core
   - PryntTrimmerView (4.0.2)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
@@ -33,6 +56,7 @@ DEPENDENCIES:
   - Kingfisher (~> 6.0)
   - MBProgressHUD (~> 1.2.0)
   - "NSObject+Rx"
+  - NYTPhotoViewer
   - RxCocoa (~> 5)
   - RxDataSources
   - RxSwift (~> 5)
@@ -49,6 +73,10 @@ SPEC REPOS:
     - Kingfisher
     - MBProgressHUD
     - "NSObject+Rx"
+    - NYTPhotoViewer
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
     - PryntTrimmerView
     - RxCocoa
     - RxDataSources
@@ -67,6 +95,10 @@ SPEC CHECKSUMS:
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
+  NYTPhotoViewer: 6f50ea92f265d54a350b39a7ab7a1b91ca487ff6
+  PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
+  PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
+  PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
   PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
@@ -78,6 +110,6 @@ SPEC CHECKSUMS:
   YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
   ZLImageEditor: eac3900c3311615e2ca6ce19987c36e07ea4e1dd
 
-PODFILE CHECKSUM: cbb958d2aa8ec6787a6d973449e7d04fb83c63b6
+PODFILE CHECKSUM: a31a2dae0ad869d0ff656aad237aaf6071e08435
 
 COCOAPODS: 1.10.0
