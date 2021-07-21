@@ -14,6 +14,8 @@ import ZLImageEditor
 
 class HomeViewController: BaseViewController {
     
+    let viewModel = HomeViewModel()
+    
     let openPickerButton = configure(UIButton()) {
         $0.setTitle("Mở Picker", for: .normal)
         $0.setTitleColor(.blue, for: .normal)

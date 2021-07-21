@@ -17,6 +17,8 @@ target 'Revolution' do
     pod 'FittedSheets'
     pod 'YPImagePicker'
     pod 'ZLImageEditor'
+    pod 'NYTPhotoViewer'
+
 
   target 'RevolutionTests' do
     inherit! :search_paths
