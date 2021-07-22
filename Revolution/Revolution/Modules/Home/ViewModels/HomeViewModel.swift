@@ -10,8 +10,14 @@ import Foundation
 import RxSwift
 import RxRelay
 
+enum HomeSectionType {
+    case highlightImage
+    case allImages
+}
+
 class HomeViewModel: BaseViewModel {
     
-    
+    var highlightImages: [UIImage] = []
+    var allImages: [UIImage] = []
     
 }

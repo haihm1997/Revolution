@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.4.3)
   - Differentiator (4.0.1)
   - FittedSheets (2.4.1)
+  - FSPagerView (0.8.3)
   - Kingfisher (6.3.0)
   - MBProgressHUD (1.2.0)
   - "NSObject+Rx (5.1.0)":
@@ -53,6 +54,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - FittedSheets
+  - FSPagerView
   - Kingfisher (~> 6.0)
   - MBProgressHUD (~> 1.2.0)
   - "NSObject+Rx"
@@ -70,6 +72,7 @@ SPEC REPOS:
     - Alamofire
     - Differentiator
     - FittedSheets
+    - FSPagerView
     - Kingfisher
     - MBProgressHUD
     - "NSObject+Rx"
@@ -92,6 +95,7 @@ SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   FittedSheets: 839b9d261e446cfa9ae8d7229d266f22b30f8be8
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
@@ -110,6 +114,6 @@ SPEC CHECKSUMS:
   YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
   ZLImageEditor: eac3900c3311615e2ca6ce19987c36e07ea4e1dd
 
-PODFILE CHECKSUM: a31a2dae0ad869d0ff656aad237aaf6071e08435
+PODFILE CHECKSUM: a4af55edf2c5298c18ef0640b325a2c9f4360eec
 
 COCOAPODS: 1.10.0

@@ -68,6 +68,8 @@
 		BC481E8026A5D39A00C8A9AE /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC481E6A26A5D39A00C8A9AE /* MovieService.swift */; };
 		BC481E8426A5D68B00C8A9AE /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC481E8326A5D68B00C8A9AE /* IAPManager.swift */; };
 		BC481E8826A5DBDA00C8A9AE /* SKProduct+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC481E8726A5DBDA00C8A9AE /* SKProduct+.swift */; };
+		BC64A0B726A9BEDD008ECAAE /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64A0B626A9BEDD008ECAAE /* ImageCell.swift */; };
+		BC64A0B926A9BFD8008ECAAE /* HighlightImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64A0B826A9BFD8008ECAAE /* HighlightImageCell.swift */; };
 		BCB37A5F26A87A27008BF43A /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37A5326A87A24008BF43A /* TabBarViewModel.swift */; };
 		BCB37A6126A87A27008BF43A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37A5726A87A24008BF43A /* TabBarViewController.swift */; };
 		BCB37A6226A87A27008BF43A /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB37A5926A87A24008BF43A /* TabBarItemView.swift */; };
@@ -186,6 +188,8 @@
 		BC481E6A26A5D39A00C8A9AE /* MovieService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		BC481E8326A5D68B00C8A9AE /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		BC481E8726A5DBDA00C8A9AE /* SKProduct+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKProduct+.swift"; sourceTree = "<group>"; };
+		BC64A0B626A9BEDD008ECAAE /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		BC64A0B826A9BFD8008ECAAE /* HighlightImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightImageCell.swift; sourceTree = "<group>"; };
 		BCB37A5326A87A24008BF43A /* TabBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		BCB37A5726A87A24008BF43A /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		BCB37A5926A87A24008BF43A /* TabBarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
@@ -416,6 +420,7 @@
 		BC481E0926A5D21B00C8A9AE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BC64A0B526A9BED3008ECAAE /* Cells */,
 				BCB37A9626A884E1008BF43A /* Items */,
 				BC481E0C26A5D23000C8A9AE /* HomeViewController.swift */,
 			);
@@ -652,6 +657,15 @@
 				BC481E8726A5DBDA00C8A9AE /* SKProduct+.swift */,
 			);
 			path = Purchasing;
+			sourceTree = "<group>";
+		};
+		BC64A0B526A9BED3008ECAAE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BC64A0B626A9BEDD008ECAAE /* ImageCell.swift */,
+				BC64A0B826A9BFD8008ECAAE /* HighlightImageCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		BCB37A5126A87A24008BF43A /* Main */ = {
@@ -1038,6 +1052,8 @@
 				BC481E1526A5D25900C8A9AE /* BaseCustomView.swift in Sources */,
 				BC481E4626A5D34A00C8A9AE /* ExtendApplication+Services.swift in Sources */,
 				BC481DE626A5D0FE00C8A9AE /* ServiceAssembly.swift in Sources */,
+				BC64A0B926A9BFD8008ECAAE /* HighlightImageCell.swift in Sources */,
+				BC64A0B726A9BEDD008ECAAE /* ImageCell.swift in Sources */,
 				BC481DEA26A5D0FE00C8A9AE /* Assembler+.swift in Sources */,
 				BC481E0426A5D1F500C8A9AE /* UIImageView+.swift in Sources */,
 				BC481E1426A5D25900C8A9AE /* BaseViewController.swift in Sources */,
@@ -1277,7 +1293,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tony.YummyPhoto;
 				PRODUCT_NAME = "Yummy Photo";
-				PROVISIONING_PROFILE_SPECIFIER = "Yummy Test";
+				PROVISIONING_PROFILE_SPECIFIER = "YM Photo Test";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -28,13 +28,14 @@ class HomeViewController: BaseViewController {
         collectionView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 24, right: 0)
         collectionView.backgroundColor = UIColor.gray
         collectionView.isHidden = true
+        collectionView.register(ImageCell.self, forCellWithReuseIdentifier: ImageCell.className)
+        collectionView.register(HighlightImageCell.self, forCellWithReuseIdentifier: HighlightImageCell.className)
         collectionView.register(HomeHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomeHeaderView.className)
         return collectionView
     }()
     
-    var viewModel: HomeViewModel!
-//    private typealias DataSource = RxCollectionViewSectionedReloadDataSource<HomeSection>
-//    private lazy var dataSource = self.createDataSource()
+    var viewModel = HomeViewModel()
+    var homeSections: [HomeSectionType] = []
     
     override func loadView() {
         super.loadView()
@@ -61,90 +62,105 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        configSubViews()
-//        bind()
+        setupCollectionView()
     }
     
-//    private func configSubViews() {
-//        let scaningItem = HeaderItem(icon: UIImage(name: .scaning)) { [weak self] _ in
-//            self?.viewModel.didTapScanProduct.onNext(())
-//        }
-//        seachHeaderView.addRightItem(scaningItem)
-//    }
-//
-//    private func bind() {
-//        viewModel.outSections.map { $0.count > 0 }.bind(to: contentVisibilityBinder).disposed(by: rx.disposeBag)
-//        collectionView.rx.setDelegate(self).disposed(by: rx.disposeBag)
-//        viewModel.outSections
-//            .bind(to: collectionView.rx.items(dataSource: dataSource))
-//            .disposed(by: rx.disposeBag)
-//        viewModel.outError.bind(to: ErrorHandler.defaultAlertBinder(from: self)).disposed(by: rx.disposeBag)
-//        viewModel.outActivity.bind(to: loadingBinder).disposed(by: rx.disposeBag)
-//        viewModel.outRevenue.bind(to: revenueView.totalRevenue).disposed(by: rx.disposeBag)
-//        searchButton.rx.tap
-//            .bind(to: viewModel.outOpenProductList)
-//            .disposed(by: rx.disposeBag)
-//    }
-//
-//    private func createDataSource() -> DataSource {
-//        let dataSource = DataSource (configureCell: { [weak self] (dataSource, collectionView, indexPath, section) -> UICollectionViewCell in
-//            guard let self = self else { return UICollectionViewCell() }
-//            let headerType = dataSource[indexPath.section].header
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeSectionIdentifier.identifider(for: headerType).rawValue,
-//                                                          for: indexPath)
-//            switch headerType {
-//            case .draff:
-//                let draffOrderCell = cell as! DraffOrderSection
-//                draffOrderCell.bind(section.data)
-//                draffOrderCell.didTapOrder
-//                    .bind(to: self.viewModel.didTapDraffOrder)
-//                    .disposed(by: draffOrderCell.disposeBag)
-//            case .waitingForPayment:
-//                let waitingPaymentCell = cell as! WaitingForPaymentSection
-//                waitingPaymentCell.bind(section.data)
-//                waitingPaymentCell.didTapPayNow
-//                    .bind(to: self.viewModel.didTapPayNow)
-//                    .disposed(by: waitingPaymentCell.disposeBag)
-//                waitingPaymentCell.didTapCopy
-//                    .bind(to: self.copyOrderCodeBinder)
-//                    .disposed(by: waitingPaymentCell.disposeBag)
-//                waitingPaymentCell.didTapOrder
-//                    .bind(to: self.viewModel.outOpenOrderDetail)
-//                    .disposed(by: waitingPaymentCell.disposeBag)
-//            }
-//            return cell
-//        })
-//
-//        dataSource.configureSupplementaryView = { (dataSource, collectionView, kind, indexPath) -> UICollectionReusableView in
-//            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeHeaderView.className,
-//                                                                         for: indexPath) as! HomeHeaderView
-//            let headerType = dataSource[indexPath.section].header
-//            switch headerType {
-//            case .draff(let title):
-//                header.bind(title: title, hasViewMore: false)
-//            case .waitingForPayment(let title):
-//                header.bind(title: title, hasViewMore: true)
-//                header.viewMoreButton.rx.controlEvent(.touchUpInside)
-//                    .bind(to: self.viewModel.outOpenOrderList)
-//                    .disposed(by: header.disposeBag)
-//            }
-//            return header
-//        }
-//
-//        return dataSource
-//    }
+    private func loadSection() {
+        homeSections.removeAll()
+        if viewModel.highlightImages.count > 0 {
+            homeSections.append(.highlightImage)
+        }
+        if viewModel.allImages.count > 0 {
+            homeSections.append(.allImages)
+        }
+    }
+    
+    private func setupCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
+    
+}
+
+extension HomeViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return homeSections.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let sectionType = homeSections[section]
+        switch sectionType {
+        case .highlightImage:
+            return 1
+        case .allImages:
+            return viewModel.allImages.count
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let sectionType = homeSections[indexPath.section]
+        switch sectionType {
+        case .highlightImage:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HighlightImageCell.className, for: indexPath) as! HighlightImageCell
+            cell.bind(images: viewModel.highlightImages)
+            return cell
+        case .allImages:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.className, for: indexPath) as! ImageCell
+            let item = viewModel.allImages[indexPath.row]
+            cell.bind(image: item)
+            return cell
+        }
+    }
     
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let headerType = dataSource[indexPath.section].header
-//        return CGSize(width: collectionView.bounds.width, height: HomeSectionIdentifier.identifider(for: headerType).cellHeight)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        return CGSize(width: collectionView.bounds.width, height: 30)
-//    }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                         withReuseIdentifier: HomeHeaderView.className,
+                                                                         for: indexPath) as! HomeHeaderView
+            header.bind(title: "Tất cả ảnh")
+            return header
+        default:
+            return UICollectionReusableView()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let section = homeSections[indexPath.section]
+        switch section {
+        case .highlightImage:
+            return CGSize(width: Constant.Size.screenWidth, height: 200)
+        default:
+            let imageWidth = (Constant.Size.screenWidth - 16) / 3.0
+            return CGSize(width: imageWidth, height: imageWidth)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let section = homeSections[section]
+        switch section {
+        case .highlightImage:
+            return CGSize(width: Constant.Size.screenWidth, height: 0)
+        default:
+            return CGSize(width: Constant.Size.screenWidth, height: 40)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let section = homeSections[section]
+        switch section {
+        case .highlightImage:
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        default:
+            return UIEdgeInsets(top: 4, left: 4, bottom: 56, right: 4)
+        }
+    }
+    
 }
 
 extension HomeViewController {
