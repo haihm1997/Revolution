@@ -12,6 +12,8 @@ extension UIColor {
     static let primary = UIColor("#EE112E")
     static let secondary = UIColor("#4f49d9")
     static let solid = UIColor("#1B1D29")
+    static let textPrimary = UIColor("#434657")
+    static let textSecondary = UIColor("#82869E")
     
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")

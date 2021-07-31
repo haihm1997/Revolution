@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class BaseCollectionViewCell: UICollectionViewCell {
+    
+    var disposeBag = DisposeBag()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,6 +25,11 @@ class BaseCollectionViewCell: UICollectionViewCell {
     
     func setupViews() {
         self.contentView.backgroundColor = .clear
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.disposeBag = DisposeBag()
     }
     
 }

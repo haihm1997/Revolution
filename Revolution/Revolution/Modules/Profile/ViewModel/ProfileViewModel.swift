@@ -8,9 +8,16 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 
 class ProfileViewModel: BaseViewModel {
     
+    let isPremium = BehaviorRelay<Bool>(value: false)
     
+    override init() {
+        super.init()
+        
+//        isPremium.accept(true)
+    }
     
 }

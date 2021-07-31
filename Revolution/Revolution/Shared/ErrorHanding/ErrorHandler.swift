@@ -31,5 +31,20 @@ class ErrorHandler {
         }
     }
     
+    static func showDefaultAlert(message: String, from controller: UIViewController) {
+        let alert = UIAlertController(title: "Yummy Photo", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
+            switch action.style{
+            case .default:
+                alert.dismiss(animated: true, completion: nil)
+            case .cancel:
+                alert.dismiss(animated: true, completion: nil)
+            case .destructive:
+                alert.dismiss(animated: true, completion: nil)
+            }
+        }))
+        controller.present(alert, animated: true, completion: nil)
+    }
+    
 }
 

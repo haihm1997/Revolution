@@ -19,6 +19,9 @@ target 'Revolution' do
     pod 'ZLImageEditor'
     pod 'NYTPhotoViewer'
     pod 'FSPagerView'
+    pod 'SwiftVideoGenerator'
+    pod 'MaterialComponents/ProgressView'
+    pod "BSImagePicker", "~> 3.1"
 
   target 'RevolutionTests' do
     inherit! :search_paths

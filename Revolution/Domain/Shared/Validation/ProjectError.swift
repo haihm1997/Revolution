@@ -17,6 +17,7 @@ public enum RevolutionError: Error {
     case paymentWasCancelled
     case productRequestFailed
     case other(error: Error)
+    case generateVideoFailed
     case undefine
 }
 
@@ -42,6 +43,8 @@ public extension RevolutionError {
             return "Không thể lấy thông tin sản phẩm. Vui lòng thử lại sau."
         case .paymentWasCancelled:
             return "Thanh toán đã bị huỷ."
+        case .generateVideoFailed:
+            return "Có lỗi xảy ra xin thử lại sau"
         }
     }
     

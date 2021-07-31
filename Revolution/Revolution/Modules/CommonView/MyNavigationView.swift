@@ -89,7 +89,7 @@ class MyNavigationView: BaseCustomView {
         navigationContainer.addSubview(headerView)
         headerView.snp.makeConstraints { (maker) in
             maker.bottom.leading.trailing.equalToSuperview()
-            maker.height.equalTo(Constant.NavigationSize.header)
+            maker.top.equalToSuperview().offset(Constant.SafeArea.topPadding)
         }
         
         addSubview(navigationContainer)

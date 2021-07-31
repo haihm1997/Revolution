@@ -51,5 +51,11 @@ extension UIImageView {
         self.kf.indicatorType = .activity
         self.kf.setImage(with: rURL, options: [.cacheOriginalImage])
     }
+    
+    func setImageColor(color: UIColor) {
+        let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
+        self.image = templateImage
+        self.tintColor = color
+    }
 
 }

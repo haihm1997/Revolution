@@ -1,10 +1,18 @@
 PODS:
   - Alamofire (5.4.3)
+  - BSImagePicker (3.3.1)
   - Differentiator (4.0.1)
   - FittedSheets (2.4.1)
   - FSPagerView (0.8.3)
   - Kingfisher (6.3.0)
+  - MaterialComponents/Palettes (124.2.0)
+  - MaterialComponents/private/Math (124.2.0)
+  - MaterialComponents/ProgressView (124.2.0):
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MDFInternationalization
   - MBProgressHUD (1.2.0)
+  - MDFInternationalization (3.0.0)
   - "NSObject+Rx (5.1.0)":
     - RxSwift (~> 5.1)
   - NYTPhotoViewer (5.0.5):
@@ -43,6 +51,7 @@ PODS:
   - RxSwift (5.1.2)
   - SnapKit (5.0.1)
   - SteviaLayout (4.7.3)
+  - SwiftVideoGenerator (1.4.0)
   - Swinject (2.7.1)
   - YPImagePicker (4.5.0):
     - PryntTrimmerView (~> 4.0.2)
@@ -53,9 +62,11 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - BSImagePicker (~> 3.1)
   - FittedSheets
   - FSPagerView
   - Kingfisher (~> 6.0)
+  - MaterialComponents/ProgressView
   - MBProgressHUD (~> 1.2.0)
   - "NSObject+Rx"
   - NYTPhotoViewer
@@ -63,6 +74,7 @@ DEPENDENCIES:
   - RxDataSources
   - RxSwift (~> 5)
   - SnapKit (~> 5.0.0)
+  - SwiftVideoGenerator
   - Swinject
   - YPImagePicker
   - ZLImageEditor
@@ -70,11 +82,14 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - BSImagePicker
     - Differentiator
     - FittedSheets
     - FSPagerView
     - Kingfisher
+    - MaterialComponents
     - MBProgressHUD
+    - MDFInternationalization
     - "NSObject+Rx"
     - NYTPhotoViewer
     - PINCache
@@ -87,17 +102,21 @@ SPEC REPOS:
     - RxSwift
     - SnapKit
     - SteviaLayout
+    - SwiftVideoGenerator
     - Swinject
     - YPImagePicker
     - ZLImageEditor
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  BSImagePicker: 0fe04b574d4d6b81093785d2af6c26227efc8428
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   FittedSheets: 839b9d261e446cfa9ae8d7229d266f22b30f8be8
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
+  MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MDFInternationalization: d697c55307816222a55685c4ccb1044ffb030c12
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
   NYTPhotoViewer: 6f50ea92f265d54a350b39a7ab7a1b91ca487ff6
   PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
@@ -110,10 +129,11 @@ SPEC CHECKSUMS:
   RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
+  SwiftVideoGenerator: 804637c18f68a4f205d806e305ebceb4adcf3d25
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
   ZLImageEditor: eac3900c3311615e2ca6ce19987c36e07ea4e1dd
 
-PODFILE CHECKSUM: a4af55edf2c5298c18ef0640b325a2c9f4360eec
+PODFILE CHECKSUM: 6281ed0a2e0635fb427b2dd5cc114edd5115fd69
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

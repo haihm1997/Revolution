@@ -13,6 +13,7 @@ import RxSwift
 class HomeHeaderView: UICollectionReusableView {
     
     let titleLabel = configure(UILabel()) {
+        $0.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         $0.textColor = UIColor.black
     }
 

@@ -21,12 +21,12 @@ enum Constant {
         static let shadowPathHeight: CGFloat = 2
         static let header: CGFloat = 56
         static let containerHeight: CGFloat = header + SafeArea.topPadding
-        static let totalHeight = 58
+        static let totalHeight = 58 + SafeArea.topPadding
     }
     
     enum SafeArea {
         static var topPadding: CGFloat {
-            let vsWindow = UIApplication.shared.keyWindow
+            let vsWindow = UIApplication.shared.windows.first
             if #available(iOS 11.0, *) {
                 return vsWindow?.safeAreaInsets.top ?? 0
             } else {
@@ -35,7 +35,7 @@ enum Constant {
         }
         
         static var bottomPadding: CGFloat {
-            let vsWindow = UIApplication.shared.keyWindow
+            let vsWindow = UIApplication.shared.windows.first
             if #available(iOS 11.0, *) {
                 return vsWindow?.safeAreaInsets.bottom ?? 0
             } else {

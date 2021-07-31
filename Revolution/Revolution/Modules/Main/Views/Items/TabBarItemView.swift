@@ -90,6 +90,7 @@ class TabBarItemView: UIView {
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.isHidden = false
+        imageView.tintColor = UIColor("#ABABAB")
         return imageView
     }()
     
@@ -97,7 +98,7 @@ class TabBarItemView: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12)
         label.isHidden = true
-        label.textColor = UIColor("#eb1f3a")
+        label.textColor = .primary
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import RxCocoa
 import RxDataSources
+import FittedSheets
 
 class HomeViewController: BaseViewController {
     
@@ -43,16 +44,16 @@ class HomeViewController: BaseViewController {
         self.view.addSubviews(navigationView, collectionView, emptyView)
         
         navigationView.snp.makeConstraints { (maker) in
-            maker.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            maker.top.equalToSuperview()
             maker.leading.trailing.equalToSuperview()
             maker.height.equalTo(Constant.NavigationSize.totalHeight)
         }
-        
+
         collectionView.snp.makeConstraints { (maker) in
             maker.top.equalTo(navigationView.snp.bottom)
             maker.leading.trailing.bottom.equalToSuperview()
         }
-        
+
         emptyView.snp.makeConstraints { (maker) in
             maker.centerX.equalToSuperview()
             maker.centerY.equalToSuperview()
@@ -63,6 +64,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        emptyView.didTapCreateNew.bind(to: didTapGenerateVideo).disposed(by: rx.disposeBag)
     }
     
     private func loadSection() {
@@ -78,6 +80,16 @@ class HomeViewController: BaseViewController {
     private func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
+    }
+    
+    private func createAlertView(message: String?) {
+        let messageAlertController = UIAlertController(title: "Yummy Photo", message: message, preferredStyle: .alert)
+        messageAlertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+            messageAlertController.dismiss(animated: true, completion: nil)
+        }))
+        DispatchQueue.main.async { [weak self] in
+            self?.present(messageAlertController, animated: true, completion: nil)
+        }
     }
     
 }
@@ -169,6 +181,19 @@ extension HomeViewController {
         return Binder(self) { target, hasData in
             target.emptyView.isHidden = hasData
             target.collectionView.isHidden = !target.emptyView.isHidden
+        }
+    }
+    
+    var didTapGenerateVideo: Binder<Void> {
+        return Binder(self) { target, _ in
+            let vc = GenerateVideoViewController()
+            let sheet = SheetViewController(controller: vc, sizes: [.marginFromTop(Constant.SafeArea.topPadding)], options: nil)
+            sheet.pullBarBackgroundColor = .clear
+            sheet.dismissOnPull = false
+            sheet.didDismiss = { _ in
+                print("Did dismiss")
+            }
+            target.present(sheet, animated: false, completion: nil)
         }
     }
     

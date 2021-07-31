@@ -17,6 +17,15 @@ extension UIImage {
         case tabBarHome = "ic_tabbar_home"
         case tabBarAccount = "ic_tabbar_account"
         case homeEmpty = "home_empty"
+        case basic = "banner_account_guess"
+        case premiun = "banner_account_logged_in"
+        case icPremium = "ic_premium"
+        case icBasic = "ic_basic"
+        case icAdd = "ic_add"
+        case icSelectPhoto = "ic_select_photo"
+        case icClose = "ic_close"
+        case icSelected = "ic_selected"
+        case icRemove = "ic_remove"
     }
     
     convenience init?(name: Name) {

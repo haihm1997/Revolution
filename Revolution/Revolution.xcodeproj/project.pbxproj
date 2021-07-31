@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		37186F49E5ED164AD9ABB032 /* Pods_Revolution_RevolutionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86FD2FD925AD14FA8D365DC1 /* Pods_Revolution_RevolutionUITests.framework */; };
+		64252FDE26AF246000FF2FAF /* BasicPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64252FDD26AF246000FF2FAF /* BasicPlanView.swift */; };
+		64252FE026AF274500FF2FAF /* PremiumPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64252FDF26AF274500FF2FAF /* PremiumPlanView.swift */; };
+		6463934C26B3131500AC9191 /* audio4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6463934826B3131200AC9191 /* audio4.mp3 */; };
+		6463934D26B3131500AC9191 /* audio3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6463934926B3131300AC9191 /* audio3.mp3 */; };
+		6463934E26B3131500AC9191 /* audio2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6463934A26B3131400AC9191 /* audio2.mp3 */; };
+		6463934F26B3131500AC9191 /* audio1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6463934B26B3131500AC9191 /* audio1.mp3 */; };
+		6463935226B3140C00AC9191 /* GenerateVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6463935126B3140C00AC9191 /* GenerateVideoViewController.swift */; };
+		6463935426B3141700AC9191 /* GenerateVideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6463935326B3141700AC9191 /* GenerateVideoViewModel.swift */; };
+		6463935626B3155300AC9191 /* BottomSheetHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6463935526B3155300AC9191 /* BottomSheetHeaderView.swift */; };
+		6463935926B3178200AC9191 /* SelectAudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6463935826B3178200AC9191 /* SelectAudioCell.swift */; };
+		6463935B26B4574E00AC9191 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6463935A26B4574E00AC9191 /* Helper.swift */; };
 		834447D28808EA23240345E6 /* Pods_Revolution.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26916F38FB6D507CA0E943C /* Pods_Revolution.framework */; };
 		BC481DAE26A5CB8400C8A9AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC481DAD26A5CB8400C8A9AE /* AppDelegate.swift */; };
 		BC481DB726A5CB8500C8A9AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC481DB626A5CB8500C8A9AE /* Assets.xcassets */; };
@@ -121,6 +132,17 @@
 		0978C101DFC23888F5C09AEA /* Pods-Revolution.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revolution.release.xcconfig"; path = "Target Support Files/Pods-Revolution/Pods-Revolution.release.xcconfig"; sourceTree = "<group>"; };
 		1BF3CEE370FF81519570C06E /* Pods_RevolutionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RevolutionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D245F9B4B8A9CA2BBC5612A /* Pods-RevolutionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RevolutionTests.debug.xcconfig"; path = "Target Support Files/Pods-RevolutionTests/Pods-RevolutionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		64252FDD26AF246000FF2FAF /* BasicPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicPlanView.swift; sourceTree = "<group>"; };
+		64252FDF26AF274500FF2FAF /* PremiumPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPlanView.swift; sourceTree = "<group>"; };
+		6463934826B3131200AC9191 /* audio4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio4.mp3; sourceTree = "<group>"; };
+		6463934926B3131300AC9191 /* audio3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio3.mp3; sourceTree = "<group>"; };
+		6463934A26B3131400AC9191 /* audio2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio2.mp3; sourceTree = "<group>"; };
+		6463934B26B3131500AC9191 /* audio1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio1.mp3; sourceTree = "<group>"; };
+		6463935126B3140C00AC9191 /* GenerateVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateVideoViewController.swift; sourceTree = "<group>"; };
+		6463935326B3141700AC9191 /* GenerateVideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateVideoViewModel.swift; sourceTree = "<group>"; };
+		6463935526B3155300AC9191 /* BottomSheetHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetHeaderView.swift; sourceTree = "<group>"; };
+		6463935826B3178200AC9191 /* SelectAudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAudioCell.swift; sourceTree = "<group>"; };
+		6463935A26B4574E00AC9191 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		86FD2FD925AD14FA8D365DC1 /* Pods_Revolution_RevolutionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Revolution_RevolutionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A38243651311E406480C52 /* Pods-Revolution.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revolution.debug.xcconfig"; path = "Target Support Files/Pods-Revolution/Pods-Revolution.debug.xcconfig"; sourceTree = "<group>"; };
 		BC481DAA26A5CB8400C8A9AE /* Yummy Photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yummy Photo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +283,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6463934726B3130300AC9191 /* Audios */ = {
+			isa = PBXGroup;
+			children = (
+				6463934B26B3131500AC9191 /* audio1.mp3 */,
+				6463934A26B3131400AC9191 /* audio2.mp3 */,
+				6463934926B3131300AC9191 /* audio3.mp3 */,
+				6463934826B3131200AC9191 /* audio4.mp3 */,
+			);
+			path = Audios;
+			sourceTree = "<group>";
+		};
+		6463935026B3133F00AC9191 /* GenerateVideo */ = {
+			isa = PBXGroup;
+			children = (
+				6463935726B3176300AC9191 /* Cell */,
+				6463935126B3140C00AC9191 /* GenerateVideoViewController.swift */,
+				6463935326B3141700AC9191 /* GenerateVideoViewModel.swift */,
+			);
+			path = GenerateVideo;
+			sourceTree = "<group>";
+		};
+		6463935726B3176300AC9191 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6463935826B3178200AC9191 /* SelectAudioCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		BC481DA126A5CB8400C8A9AE = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +419,7 @@
 		BC481DF426A5D1DB00C8A9AE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6463935026B3133F00AC9191 /* GenerateVideo */,
 				BCB37A6C26A87BAE008BF43A /* Profile */,
 				BCB37A5C26A87A27008BF43A /* CommonView */,
 				BCB37A5126A87A24008BF43A /* Main */,
@@ -389,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				BC481DF726A5D1F500C8A9AE /* Extensions */,
+				6463935A26B4574E00AC9191 /* Helper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -709,6 +762,7 @@
 			children = (
 				BCB37A5D26A87A27008BF43A /* BadgeView.swift */,
 				BCB37A5E26A87A27008BF43A /* MyNavigationView.swift */,
+				6463935526B3155300AC9191 /* BottomSheetHeaderView.swift */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -726,6 +780,8 @@
 			isa = PBXGroup;
 			children = (
 				BCB37A6F26A87BC4008BF43A /* ProfileViewController.swift */,
+				64252FDD26AF246000FF2FAF /* BasicPlanView.swift */,
+				64252FDF26AF274500FF2FAF /* PremiumPlanView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -741,6 +797,7 @@
 		BCB37A7326A87D5A008BF43A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6463934726B3130300AC9191 /* Audios */,
 				BCB37A7526A87D71008BF43A /* Fonts */,
 				BC481DB626A5CB8500C8A9AE /* Assets.xcassets */,
 			);
@@ -904,6 +961,7 @@
 				BCB37A8D26A87D71008BF43A /* Roboto-ThinItalic.ttf in Resources */,
 				BCB37A8E26A87D71008BF43A /* Roboto-BoldItalic.ttf in Resources */,
 				BCB37A9426A87D71008BF43A /* Roboto-Thin.ttf in Resources */,
+				6463934C26B3131500AC9191 /* audio4.mp3 in Resources */,
 				BCB37A8F26A87D71008BF43A /* Roboto-LightItalic.ttf in Resources */,
 				BC481DBA26A5CB8500C8A9AE /* LaunchScreen.storyboard in Resources */,
 				BCB37A9526A87D71008BF43A /* Roboto-Black.ttf in Resources */,
@@ -913,11 +971,14 @@
 				BCB37A9226A87D71008BF43A /* Roboto-BlackItalic.ttf in Resources */,
 				BCB37A9026A87D71008BF43A /* Roboto-CondensedItalic.ttf in Resources */,
 				BCB37A8A26A87D71008BF43A /* Roboto-BoldCondensed.ttf in Resources */,
+				6463934F26B3131500AC9191 /* audio1.mp3 in Resources */,
 				BCB37A8726A87D71008BF43A /* Roboto-Light.ttf in Resources */,
 				BCB37A8926A87D71008BF43A /* Roboto-MediumItalic.ttf in Resources */,
 				BCB37A9126A87D71008BF43A /* Roboto-Italic.ttf in Resources */,
 				BCB37A8B26A87D71008BF43A /* Roboto-BoldCondensedItalic.ttf in Resources */,
+				6463934D26B3131500AC9191 /* audio3.mp3 in Resources */,
 				BCB37A9326A87D71008BF43A /* Roboto-Bold.ttf in Resources */,
+				6463934E26B3131500AC9191 /* audio2.mp3 in Resources */,
 				BCB37A8626A87D71008BF43A /* Roboto-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1055,8 +1116,10 @@
 				BC64A0B926A9BFD8008ECAAE /* HighlightImageCell.swift in Sources */,
 				BC64A0B726A9BEDD008ECAAE /* ImageCell.swift in Sources */,
 				BC481DEA26A5D0FE00C8A9AE /* Assembler+.swift in Sources */,
+				6463935226B3140C00AC9191 /* GenerateVideoViewController.swift in Sources */,
 				BC481E0426A5D1F500C8A9AE /* UIImageView+.swift in Sources */,
 				BC481E1426A5D25900C8A9AE /* BaseViewController.swift in Sources */,
+				6463935926B3178200AC9191 /* SelectAudioCell.swift in Sources */,
 				BC481E7D26A5D39A00C8A9AE /* MovieDetailModel.swift in Sources */,
 				BC481E0526A5D1F500C8A9AE /* View+.swift in Sources */,
 				BC481E7226A5D39A00C8A9AE /* NetworkError.swift in Sources */,
@@ -1073,6 +1136,7 @@
 				BC481E7C26A5D39A00C8A9AE /* MovieModel.swift in Sources */,
 				BC481DF226A5D12D00C8A9AE /* Constant.swift in Sources */,
 				BC481E4426A5D34A00C8A9AE /* Rx+.swift in Sources */,
+				64252FE026AF274500FF2FAF /* PremiumPlanView.swift in Sources */,
 				BC481E7626A5D39A00C8A9AE /* EndpointConvertible.swift in Sources */,
 				BCB37A6326A87A27008BF43A /* TabBarView.swift in Sources */,
 				BC481E1626A5D25900C8A9AE /* BaseViewModel.swift in Sources */,
@@ -1090,6 +1154,7 @@
 				BC481E0726A5D1F500C8A9AE /* UIColor+.swift in Sources */,
 				BC481E3B26A5D34A00C8A9AE /* DomainConvertible.swift in Sources */,
 				BCB37A9826A884EF008BF43A /* HomeHeaderView.swift in Sources */,
+				6463935B26B4574E00AC9191 /* Helper.swift in Sources */,
 				BC481E0D26A5D23000C8A9AE /* HomeViewController.swift in Sources */,
 				BC481E6F26A5D39A00C8A9AE /* Network.swift in Sources */,
 				BC481E7926A5D39A00C8A9AE /* Single+DomainMapping.swift in Sources */,
@@ -1105,13 +1170,16 @@
 				BC481E0626A5D1F500C8A9AE /* UIImage+.swift in Sources */,
 				BCB37A9A26A885AE008BF43A /* HomeEmptyView.swift in Sources */,
 				BC481E0226A5D1F500C8A9AE /* String+.swift in Sources */,
+				6463935626B3155300AC9191 /* BottomSheetHeaderView.swift in Sources */,
 				BCB37A6226A87A27008BF43A /* TabBarItemView.swift in Sources */,
 				BC481E7326A5D39A00C8A9AE /* NetworkConfiguration.swift in Sources */,
 				BC481E3C26A5D34A00C8A9AE /* DomainErrorConvertible.swift in Sources */,
 				BC481DAE26A5CB8400C8A9AE /* AppDelegate.swift in Sources */,
+				64252FDE26AF246000FF2FAF /* BasicPlanView.swift in Sources */,
 				BC481E7A26A5D39A00C8A9AE /* Single+Decodable.swift in Sources */,
 				BC481E7526A5D39A00C8A9AE /* HTTPEncoder.swift in Sources */,
 				BCB37A7026A87BC4008BF43A /* ProfileViewController.swift in Sources */,
+				6463935426B3141700AC9191 /* GenerateVideoViewModel.swift in Sources */,
 				BCB37A6426A87A27008BF43A /* CustomTabBar.swift in Sources */,
 				BC481E7026A5D39A00C8A9AE /* Configs.swift in Sources */,
 			);
@@ -1282,8 +1350,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5K2M5M64YL;
 				INFOPLIST_FILE = Revolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -1293,7 +1361,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tony.YummyPhoto;
 				PRODUCT_NAME = "Yummy Photo";
-				PROVISIONING_PROFILE_SPECIFIER = "YM Photo Test";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1305,7 +1373,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 5K2M5M64YL;
 				INFOPLIST_FILE = Revolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1315,6 +1385,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tony.YummyPhoto;
 				PRODUCT_NAME = "Yummy Photo";
+				PROVISIONING_PROFILE_SPECIFIER = "YM Photo Test";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

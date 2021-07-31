@@ -101,7 +101,10 @@ extension TabBarController {
             let config = targer.configCamera()
             let picker = YPImagePicker(configuration: config)
             picker.didFinishPicking { items, isSuccess in
-                guard let modifiedImage = items.singlePhoto?.image else { return }
+                guard let modifiedImage = items.singlePhoto?.image else {
+                    picker.dismiss(animated: true, completion: nil)
+                    return
+                }
                 picker.dismiss(animated: true) {
                     ZLImageEditorConfiguration.default().editImageTools = [.draw, .clip, .imageSticker, .textSticker, .mosaic, .filter]
                     ZLEditImageViewController.showEditImageVC(parentVC: self, image: modifiedImage, editModel: nil) { [weak self] (resImage, editModel) in
