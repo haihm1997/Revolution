@@ -26,4 +26,12 @@ extension BaseViewController {
         }
     }
     
+    func showLoadingIndicator() {
+        MBProgressHUD.showAdded(to: view, animated: true)
+    }
+    
+    func hideLoadingIndicator() {
+        MBProgressHUD.showAdded(to: view, animated: true)
+    }
+    
 }

@@ -15,6 +15,7 @@ import RxCocoa
 class GenerateVideoViewController: BaseViewController {
     
     let headerView = BottomSheetHeaderView()
+    var generateVideoHandler: ((_ video: RealmVideo) -> Void)?
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -57,7 +58,8 @@ class GenerateVideoViewController: BaseViewController {
         collectionView.snp.makeConstraints { maker in
             maker.top.equalTo(headerView.snp.bottom)
             maker.leading.trailing.equalToSuperview()
-            maker.bottom.equalToSuperview().inset(Constant.SafeArea.bottomPadding + 62)        }
+            maker.bottom.equalToSuperview().inset(Constant.SafeArea.bottomPadding + 62)
+        }
     }
     
     override func viewDidLoad() {
@@ -71,17 +73,28 @@ class GenerateVideoViewController: BaseViewController {
         }
         
         generateVideoButton.rx.tap.bind(to: didTapGenerate).disposed(by: rx.disposeBag)
-        viewModel.didFinishGenerating.subscribe(onNext: { [weak self] message in
+        viewModel.didFinishGenerating.subscribe(onNext: { [weak self] video in
             guard let self = self else { return }
-            ErrorHandler.showDefaultAlert(message: message, from: self)
+            self.hideLoadingIndicator()
+            ErrorHandler.showDefaultAlert(message: "Tạo video thành công", from: self) {
+                self.dismiss(animated: true) {
+                    self.generateVideoHandler?(video)
+                }
+            }
         }) { [weak self] error in
             guard let self = self else { return }
-            ErrorHandler.showDefaultAlert(message: error.localizedDescription, from: self)
+            self.hideLoadingIndicator()
+            ErrorHandler.showDefaultAlert(message: error.localizedDescription, from: self) {
+                self.viewModel.selectedPhotos = [YMSelectedPhoto(isOpenGalleryImage: true,
+                                                                image: UIImage(name: .icSelectPhoto))]
+                self.collectionView.reloadData()
+            }
         }.disposed(by: rx.disposeBag)
     }
     
     var didTapGenerate: Binder<Void> {
         return Binder(self) { target, _ in
+            target.showLoadingIndicator()
             target.viewModel.generateVideo()
         }
     }

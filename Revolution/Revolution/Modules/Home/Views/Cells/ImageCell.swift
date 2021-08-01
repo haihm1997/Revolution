@@ -18,6 +18,7 @@ class ImageCell: BaseCollectionViewCell {
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.textSecondary.cgColor
         $0.layer.cornerRadius = 4
+        $0.clipsToBounds = true
     }
     
     let imageView = configure(UIImageView()) {

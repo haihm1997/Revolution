@@ -39,6 +39,11 @@ PODS:
     - PINCache (~> 3.0.3)
     - PINRemoteImage/Core
   - PryntTrimmerView (4.0.2)
+  - Realm (10.11.0):
+    - Realm/Headers (= 10.11.0)
+  - Realm/Headers (10.11.0)
+  - RealmSwift (10.11.0):
+    - Realm (= 10.11.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -70,6 +75,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.2.0)
   - "NSObject+Rx"
   - NYTPhotoViewer
+  - RealmSwift
   - RxCocoa (~> 5)
   - RxDataSources
   - RxSwift (~> 5)
@@ -96,6 +102,8 @@ SPEC REPOS:
     - PINOperation
     - PINRemoteImage
     - PryntTrimmerView
+    - Realm
+    - RealmSwift
     - RxCocoa
     - RxDataSources
     - RxRelay
@@ -123,6 +131,8 @@ SPEC CHECKSUMS:
   PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
   PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
   PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
+  Realm: 39ff23f0f709cd4ed93eb47ee6593c2158945b38
+  RealmSwift: 42713e09a8631070d6c12c3c5fb22b8edc1daa41
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
@@ -134,6 +144,6 @@ SPEC CHECKSUMS:
   YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
   ZLImageEditor: eac3900c3311615e2ca6ce19987c36e07ea4e1dd
 
-PODFILE CHECKSUM: 6281ed0a2e0635fb427b2dd5cc114edd5115fd69
+PODFILE CHECKSUM: 9621ce00f47de23c33ca1f1f8e852167910c9b20
 
 COCOAPODS: 1.10.1

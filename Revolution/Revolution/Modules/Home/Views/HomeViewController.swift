@@ -11,6 +11,7 @@ import SnapKit
 import RxCocoa
 import RxDataSources
 import FittedSheets
+import RxSwift
 
 class HomeViewController: BaseViewController {
     
@@ -26,8 +27,8 @@ class HomeViewController: BaseViewController {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 24, right: 0)
-        collectionView.backgroundColor = UIColor.gray
+        collectionView.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 24, right: 8)
+        collectionView.backgroundColor = UIColor.white
         collectionView.isHidden = true
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: ImageCell.className)
         collectionView.register(HighlightImageCell.self, forCellWithReuseIdentifier: HighlightImageCell.className)
@@ -35,13 +36,14 @@ class HomeViewController: BaseViewController {
         return collectionView
     }()
     
+    let addView = AddView()
+    
     var viewModel = HomeViewModel()
-    var homeSections: [HomeSectionType] = []
     
     override func loadView() {
         super.loadView()
         self.view.backgroundColor = .white
-        self.view.addSubviews(navigationView, collectionView, emptyView)
+        self.view.addSubviews(navigationView, collectionView, emptyView, addView)
         
         navigationView.snp.makeConstraints { (maker) in
             maker.top.equalToSuperview()
@@ -59,27 +61,32 @@ class HomeViewController: BaseViewController {
             maker.centerY.equalToSuperview()
         }
         
+        addView.snp.makeConstraints { maker in
+            maker.trailing.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(24)
+            maker.width.height.equalTo(60)
+        }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
+        bindViewModel()
         emptyView.didTapCreateNew.bind(to: didTapGenerateVideo).disposed(by: rx.disposeBag)
     }
     
-    private func loadSection() {
-        homeSections.removeAll()
-        if viewModel.highlightImages.count > 0 {
-            homeSections.append(.highlightImage)
-        }
-        if viewModel.allImages.count > 0 {
-            homeSections.append(.allImages)
-        }
-    }
-    
-    private func setupCollectionView() {
-        collectionView.dataSource = self
+    private func bindViewModel() {
+        viewModel.allVideos.bind(to: collectionView.rx.items(cellIdentifier: ImageCell.className,
+                                                             cellType: ImageCell.self)) { [weak self] row, element, cell in
+            guard let self = self else { return }
+            cell.bind(image: element.previewImage)
+            cell.removeButton.rx.tap
+                .withLatestFrom(Observable.just(element))
+                .bind(to: self.didTapRemoveItemBinder)
+                .disposed(by: self.rx.disposeBag)
+        }.disposed(by: rx.disposeBag)
+        viewModel.allVideos.map { $0.count > 0 }.bind(to: contentVisibilityBinder).disposed(by: rx.disposeBag)
         collectionView.delegate = self
+        addView.didTapAddButton.bind(to: didTapGenerateVideo).disposed(by: rx.disposeBag)
     }
     
     private func createAlertView(message: String?) {
@@ -94,83 +101,11 @@ class HomeViewController: BaseViewController {
     
 }
 
-extension HomeViewController: UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return homeSections.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let sectionType = homeSections[section]
-        switch sectionType {
-        case .highlightImage:
-            return 1
-        case .allImages:
-            return viewModel.allImages.count
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let sectionType = homeSections[indexPath.section]
-        switch sectionType {
-        case .highlightImage:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HighlightImageCell.className, for: indexPath) as! HighlightImageCell
-            cell.bind(images: viewModel.highlightImages)
-            return cell
-        case .allImages:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.className, for: indexPath) as! ImageCell
-            let item = viewModel.allImages[indexPath.row]
-            cell.bind(image: item)
-            return cell
-        }
-    }
-    
-}
-
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                         withReuseIdentifier: HomeHeaderView.className,
-                                                                         for: indexPath) as! HomeHeaderView
-            header.bind(title: "Tất cả ảnh")
-            return header
-        default:
-            return UICollectionReusableView()
-        }
-    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let section = homeSections[indexPath.section]
-        switch section {
-        case .highlightImage:
-            return CGSize(width: Constant.Size.screenWidth, height: 200)
-        default:
-            let imageWidth = (Constant.Size.screenWidth - 16) / 3.0
-            return CGSize(width: imageWidth, height: imageWidth)
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let section = homeSections[section]
-        switch section {
-        case .highlightImage:
-            return CGSize(width: Constant.Size.screenWidth, height: 0)
-        default:
-            return CGSize(width: Constant.Size.screenWidth, height: 40)
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let section = homeSections[section]
-        switch section {
-        case .highlightImage:
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        default:
-            return UIEdgeInsets(top: 4, left: 4, bottom: 56, right: 4)
-        }
+        let imageWidth = (Constant.Size.screenWidth - 38) / 3.0
+        return CGSize(width: imageWidth, height: imageWidth)
     }
     
 }
@@ -179,8 +114,8 @@ extension HomeViewController {
     
     var contentVisibilityBinder: Binder<Bool> {
         return Binder(self) { target, hasData in
+            target.collectionView.isHidden = !hasData
             target.emptyView.isHidden = hasData
-            target.collectionView.isHidden = !target.emptyView.isHidden
         }
     }
     
@@ -190,10 +125,27 @@ extension HomeViewController {
             let sheet = SheetViewController(controller: vc, sizes: [.marginFromTop(Constant.SafeArea.topPadding)], options: nil)
             sheet.pullBarBackgroundColor = .clear
             sheet.dismissOnPull = false
-            sheet.didDismiss = { _ in
-                print("Did dismiss")
+            vc.generateVideoHandler = { [weak self] video in
+                guard let self = self else { return }
+                var tempVideos = self.viewModel.allVideos.value
+                tempVideos.append(YMVideo(video))
+                self.viewModel.allVideos.accept(tempVideos)
             }
             target.present(sheet, animated: false, completion: nil)
+        }
+    }
+    
+    var didRemoveItemBinder: Binder<Void> {
+        return Binder(self) { target, _ in
+            ErrorHandler.showDefaultAlert(message: "Đã xoá video", from: target, didDismiss: nil)
+        }
+    }
+    
+    var didTapRemoveItemBinder: Binder<YMVideo> {
+        return Binder(self) { target, item in
+            ErrorHandler.show2OptionAlert(message: "Bạn có muốn xoá video?", from: self, didDismiss: nil) {
+                target.viewModel.didTapRemoveItem.accept(item)
+            }
         }
     }
     

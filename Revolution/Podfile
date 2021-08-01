@@ -22,6 +22,7 @@ target 'Revolution' do
     pod 'SwiftVideoGenerator'
     pod 'MaterialComponents/ProgressView'
     pod "BSImagePicker", "~> 3.1"
+    pod 'RealmSwift'
 
   target 'RevolutionTests' do
     inherit! :search_paths

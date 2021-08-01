@@ -33,7 +33,7 @@ class BottomSheetHeaderView: BaseCustomView {
     }
     
     let lineView = configure(UIView()) {
-        $0.backgroundColor = .textSecondary
+        $0.backgroundColor = .divided
     }
     
     var didTapLeftButton: (() -> Void)?
