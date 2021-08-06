@@ -27,6 +27,9 @@ extension UIImage {
         case icSelected = "ic_selected"
         case icRemove = "ic_remove"
         case icAddMovie = "ic_gnerate_video"
+        case icButtonPremium = "ic_button_premium"
+        case icRestore = "ic_restore"
+        case icbasicPlan = "ic_basic_plan"
     }
     
     convenience init?(name: Name) {

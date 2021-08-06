@@ -22,6 +22,7 @@
 		64A6879126B5A5DB00D58B3E /* RealmVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6879026B5A5DB00D58B3E /* RealmVideo.swift */; };
 		64A6879326B5AD0000D58B3E /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6879226B5AD0000D58B3E /* RealmManager.swift */; };
 		64A6879526B68C3B00D58B3E /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6879426B68C3B00D58B3E /* AddView.swift */; };
+		64B8CE6726BC532C002948F2 /* IAPViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B8CE6626BC532C002948F2 /* IAPViews.swift */; };
 		834447D28808EA23240345E6 /* Pods_Revolution.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26916F38FB6D507CA0E943C /* Pods_Revolution.framework */; };
 		BC481DAE26A5CB8400C8A9AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC481DAD26A5CB8400C8A9AE /* AppDelegate.swift */; };
 		BC481DB726A5CB8500C8A9AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC481DB626A5CB8500C8A9AE /* Assets.xcassets */; };
@@ -149,6 +150,7 @@
 		64A6879026B5A5DB00D58B3E /* RealmVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmVideo.swift; sourceTree = "<group>"; };
 		64A6879226B5AD0000D58B3E /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		64A6879426B68C3B00D58B3E /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		64B8CE6626BC532C002948F2 /* IAPViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPViews.swift; sourceTree = "<group>"; };
 		86FD2FD925AD14FA8D365DC1 /* Pods_Revolution_RevolutionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Revolution_RevolutionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A38243651311E406480C52 /* Pods-Revolution.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revolution.debug.xcconfig"; path = "Target Support Files/Pods-Revolution/Pods-Revolution.debug.xcconfig"; sourceTree = "<group>"; };
 		BC481DAA26A5CB8400C8A9AE /* Yummy Photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yummy Photo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -791,6 +793,7 @@
 				BCB37A6F26A87BC4008BF43A /* ProfileViewController.swift */,
 				64252FDD26AF246000FF2FAF /* BasicPlanView.swift */,
 				64252FDF26AF274500FF2FAF /* PremiumPlanView.swift */,
+				64B8CE6626BC532C002948F2 /* IAPViews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1134,6 +1137,7 @@
 				BC481E7226A5D39A00C8A9AE /* NetworkError.swift in Sources */,
 				BC481DF326A5D12D00C8A9AE /* ErrorHandler.swift in Sources */,
 				BCB37A5F26A87A27008BF43A /* TabBarViewModel.swift in Sources */,
+				64B8CE6726BC532C002948F2 /* IAPViews.swift in Sources */,
 				BCB37A7226A87BCC008BF43A /* ProfileViewModel.swift in Sources */,
 				BC481E3A26A5D34A00C8A9AE /* ActivityTracker.swift in Sources */,
 				BCB37A6526A87A27008BF43A /* BadgeView.swift in Sources */,
@@ -1364,14 +1368,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5K2M5M64YL;
+				DEVELOPMENT_TEAM = K3YRDR3TB9;
 				INFOPLIST_FILE = Revolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tony.YummyPhoto;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.photo.yummy-photo.stage";
 				PRODUCT_NAME = "Yummy Photo";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1385,9 +1389,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 5K2M5M64YL;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K3YRDR3TB9;
 				INFOPLIST_FILE = Revolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1395,9 +1399,9 @@
 					"@executable_path/Frameworks",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tony.YummyPhoto;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.photo.yummy-photo";
 				PRODUCT_NAME = "Yummy Photo";
-				PROVISIONING_PROFILE_SPECIFIER = "YM Photo Test";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

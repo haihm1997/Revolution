@@ -39,16 +39,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MDFInternationalization.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>MaterialComponents.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>NSObject+Rx.xcscheme</key>
 		<dict>
 			<key>isShown</key>

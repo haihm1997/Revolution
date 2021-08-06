@@ -23,6 +23,7 @@ class ImageCell: BaseCollectionViewCell {
     
     let imageView = configure(UIImageView()) {
         $0.backgroundColor = .clear
+        $0.contentMode = .scaleAspectFit
     }
     
     let removeButton = configure(UIButton()) {

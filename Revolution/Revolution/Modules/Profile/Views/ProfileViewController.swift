@@ -30,6 +30,10 @@ class ProfileViewController: BaseViewController {
         $0.backgroundColor = .white
     }
     
+    let premiumView = PremiumView()
+    
+    let restoreView = RestoreView()
+    
     let basicPlanView = BasicPlanView()
     
     let premiumPlanView = PremiumPlanView()
@@ -43,7 +47,7 @@ class ProfileViewController: BaseViewController {
             maker.centerX.centerY.equalToSuperview()
             maker.width.height.equalTo(60)
         }
-        self.view.addSubviews(bannerImage, containerImage, basicPlanView, premiumPlanView)
+        self.view.addSubviews(bannerImage, containerImage, basicPlanView, premiumPlanView, premiumView, restoreView)
         
         bannerImage.snp.makeConstraints { maker in
             maker.top.leading.trailing.equalToSuperview()
@@ -65,6 +69,19 @@ class ProfileViewController: BaseViewController {
             maker.top.equalTo(containerImage.snp.bottom).offset(16)
             maker.trailing.leading.equalToSuperview().inset(24)
         }
+        
+        premiumView.snp.makeConstraints { maker in
+            maker.trailing.equalToSuperview().inset(16)
+            maker.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(16)
+            maker.height.equalTo(32)
+        }
+        
+        restoreView.snp.makeConstraints { maker in
+            maker.leading.equalToSuperview().inset(16)
+            maker.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(16)
+            maker.height.equalTo(32)
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -72,6 +89,9 @@ class ProfileViewController: BaseViewController {
         self.view.backgroundColor = .white
         
         viewModel.isPremium.bind(to: contentBinder).disposed(by: rx.disposeBag)
+        premiumView.button.rx.tap
+            .bind(to: didTapPurchase)
+            .disposed(by: rx.disposeBag)
     }
     
 }
@@ -84,6 +104,12 @@ extension ProfileViewController {
             target.centerImage.image = isPremium ? UIImage(name: .icPremium) : UIImage(name: .icBasic)
             target.basicPlanView.isHidden = isPremium ? true : false
             target.premiumPlanView.isHidden = isPremium ? false : true
+        }
+    }
+    
+    var didTapPurchase: Binder<Void> {
+        return Binder(self) { target, _ in
+            print("Purchaseeeeee!")
         }
     }
     

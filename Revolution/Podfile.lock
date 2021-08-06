@@ -5,14 +5,7 @@ PODS:
   - FittedSheets (2.4.1)
   - FSPagerView (0.8.3)
   - Kingfisher (6.3.0)
-  - MaterialComponents/Palettes (124.2.0)
-  - MaterialComponents/private/Math (124.2.0)
-  - MaterialComponents/ProgressView (124.2.0):
-    - MaterialComponents/Palettes
-    - MaterialComponents/private/Math
-    - MDFInternationalization
   - MBProgressHUD (1.2.0)
-  - MDFInternationalization (3.0.0)
   - "NSObject+Rx (5.1.0)":
     - RxSwift (~> 5.1)
   - NYTPhotoViewer (5.0.5):
@@ -71,7 +64,6 @@ DEPENDENCIES:
   - FittedSheets
   - FSPagerView
   - Kingfisher (~> 6.0)
-  - MaterialComponents/ProgressView
   - MBProgressHUD (~> 1.2.0)
   - "NSObject+Rx"
   - NYTPhotoViewer
@@ -93,9 +85,7 @@ SPEC REPOS:
     - FittedSheets
     - FSPagerView
     - Kingfisher
-    - MaterialComponents
     - MBProgressHUD
-    - MDFInternationalization
     - "NSObject+Rx"
     - NYTPhotoViewer
     - PINCache
@@ -122,9 +112,7 @@ SPEC CHECKSUMS:
   FittedSheets: 839b9d261e446cfa9ae8d7229d266f22b30f8be8
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
-  MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MDFInternationalization: d697c55307816222a55685c4ccb1044ffb030c12
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
   NYTPhotoViewer: 6f50ea92f265d54a350b39a7ab7a1b91ca487ff6
   PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
@@ -144,6 +132,6 @@ SPEC CHECKSUMS:
   YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
   ZLImageEditor: eac3900c3311615e2ca6ce19987c36e07ea4e1dd
 
-PODFILE CHECKSUM: 9621ce00f47de23c33ca1f1f8e852167910c9b20
+PODFILE CHECKSUM: 6de01412c9cf33c81fde736b3cb5fe94b417ee14
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.2

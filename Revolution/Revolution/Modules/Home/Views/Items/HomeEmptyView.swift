@@ -49,7 +49,7 @@ class HomeEmptyView: BaseCustomView {
         }
         
         contentLabel.snp.makeConstraints { (maker) in
-            maker.top.equalTo(emptyImg.snp.bottom).offset(24)
+            maker.top.equalTo(emptyImg.snp.bottom).offset(16)
             maker.leading.trailing.equalToSuperview()
         }
         

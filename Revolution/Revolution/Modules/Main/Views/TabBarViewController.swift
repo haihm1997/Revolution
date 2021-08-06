@@ -106,14 +106,23 @@ extension TabBarController {
                     return
                 }
                 picker.dismiss(animated: true) {
-                    ZLImageEditorConfiguration.default().editImageTools = [.draw, .clip, .imageSticker, .textSticker, .mosaic, .filter]
-                    ZLEditImageViewController.showEditImageVC(parentVC: self, image: modifiedImage, editModel: nil) { [weak self] (resImage, editModel) in
-                        print("image modified!")
-                    }
+                    targer.openEditPhoto(with: modifiedImage)
                 }
             }
             self.present(picker, animated: true, completion: nil)
         }
+    }
+    
+    func openEditPhoto(with image: UIImage) {
+        ZLImageEditorConfiguration.default().editImageTools = [.draw, .clip, .imageSticker, .textSticker, .mosaic, .filter]
+        ZLEditImageViewController.showEditImageVC(parentVC: self, image: image, editModel: nil) { [self] (resImage, editModel) in
+            UIImageWriteToSavedPhotosAlbum(resImage, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        }
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        guard let firstNav = self.viewControllers?.first as? UINavigationController else { return }
+        (firstNav.viewControllers.first as? HomeViewController)?.viewModel.getPhotos()
     }
     
     private func configCamera() -> YPImagePickerConfiguration {

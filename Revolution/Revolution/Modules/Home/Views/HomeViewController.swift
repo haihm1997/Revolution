@@ -12,6 +12,7 @@ import RxCocoa
 import RxDataSources
 import FittedSheets
 import RxSwift
+import AVKit
 
 class HomeViewController: BaseViewController {
     
@@ -21,7 +22,7 @@ class HomeViewController: BaseViewController {
     }
     
     let emptyView = configure(HomeEmptyView()) {
-        $0.isHidden = false
+        $0.isHidden = true
     }
     
     private lazy var collectionView: UICollectionView = {
@@ -29,7 +30,7 @@ class HomeViewController: BaseViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 24, right: 8)
         collectionView.backgroundColor = UIColor.white
-        collectionView.isHidden = true
+        collectionView.isHidden = false
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: ImageCell.className)
         collectionView.register(HighlightImageCell.self, forCellWithReuseIdentifier: HighlightImageCell.className)
         collectionView.register(HomeHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomeHeaderView.className)
@@ -43,7 +44,7 @@ class HomeViewController: BaseViewController {
     override func loadView() {
         super.loadView()
         self.view.backgroundColor = .white
-        self.view.addSubviews(navigationView, collectionView, emptyView, addView)
+        self.view.addSubviews(navigationView, collectionView, emptyView)
         
         navigationView.snp.makeConstraints { (maker) in
             maker.top.equalToSuperview()
@@ -61,32 +62,19 @@ class HomeViewController: BaseViewController {
             maker.centerY.equalToSuperview()
         }
         
-        addView.snp.makeConstraints { maker in
-            maker.trailing.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(24)
-            maker.width.height.equalTo(60)
-        }
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
-        emptyView.didTapCreateNew.bind(to: didTapGenerateVideo).disposed(by: rx.disposeBag)
+//        viewModel.getPhotos()
     }
     
     private func bindViewModel() {
-        viewModel.allVideos.bind(to: collectionView.rx.items(cellIdentifier: ImageCell.className,
-                                                             cellType: ImageCell.self)) { [weak self] row, element, cell in
-            guard let self = self else { return }
-            cell.bind(image: element.previewImage)
-            cell.removeButton.rx.tap
-                .withLatestFrom(Observable.just(element))
-                .bind(to: self.didTapRemoveItemBinder)
-                .disposed(by: self.rx.disposeBag)
-        }.disposed(by: rx.disposeBag)
-        viewModel.allVideos.map { $0.count > 0 }.bind(to: contentVisibilityBinder).disposed(by: rx.disposeBag)
         collectionView.delegate = self
-        addView.didTapAddButton.bind(to: didTapGenerateVideo).disposed(by: rx.disposeBag)
+        collectionView.dataSource = self
+//        addView.didTapAddButton.bind(to: didTapGenerateVideo).disposed(by: rx.disposeBag)
+        viewModel.outDidFetchImages.bind(to: didFetchImageBinder).disposed(by: rx.disposeBag)
     }
     
     private func createAlertView(message: String?) {
@@ -101,11 +89,33 @@ class HomeViewController: BaseViewController {
     
 }
 
+extension HomeViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.className, for: indexPath) as! ImageCell
+        cell.bind(image: viewModel.images[indexPath.row])
+        return cell
+    }
+    
+}
+
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let imageWidth = (Constant.Size.screenWidth - 38) / 3.0
         return CGSize(width: imageWidth, height: imageWidth)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
     
 }
@@ -119,19 +129,9 @@ extension HomeViewController {
         }
     }
     
-    var didTapGenerateVideo: Binder<Void> {
+    var didFetchImageBinder: Binder<Void> {
         return Binder(self) { target, _ in
-            let vc = GenerateVideoViewController()
-            let sheet = SheetViewController(controller: vc, sizes: [.marginFromTop(Constant.SafeArea.topPadding)], options: nil)
-            sheet.pullBarBackgroundColor = .clear
-            sheet.dismissOnPull = false
-            vc.generateVideoHandler = { [weak self] video in
-                guard let self = self else { return }
-                var tempVideos = self.viewModel.allVideos.value
-                tempVideos.append(YMVideo(video))
-                self.viewModel.allVideos.accept(tempVideos)
-            }
-            target.present(sheet, animated: false, completion: nil)
+            target.collectionView.reloadData()
         }
     }
     

@@ -31,6 +31,8 @@ class MyNavigationView: BaseCustomView {
     let rightButton = configure(UIButton()) {
         $0.setTitleColor(.darkGray, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        $0.setTitle("Tạo video", for: .normal)
+        $0.setTitleColor(.blue, for: .normal)
     }
     
     let headerView = configure(UIView()) {
