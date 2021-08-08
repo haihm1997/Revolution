@@ -17,16 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = TabBarController()
         window.makeKeyAndVisible()
         self.window = window
-        
-        IAPManager.shared.startObserving()
-        
+    
+        YummyPhotoApplication.shared.appDidFinishLaunching()
         return true
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
         IAPManager.shared.stopObserving()
     }
-
 
 }
 

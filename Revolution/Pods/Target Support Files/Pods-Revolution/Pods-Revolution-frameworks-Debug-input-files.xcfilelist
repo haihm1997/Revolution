@@ -20,7 +20,6 @@ ${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
 ${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
 ${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework
-${BUILT_PRODUCTS_DIR}/SwiftVideoGenerator/SwiftVideoGenerator.framework
 ${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework
 ${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework
 ${BUILT_PRODUCTS_DIR}/ZLImageEditor/ZLImageEditor.framework

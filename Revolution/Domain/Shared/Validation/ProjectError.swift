@@ -18,6 +18,7 @@ public enum RevolutionError: Error {
     case productRequestFailed
     case other(error: Error)
     case generateVideoFailed
+    case premiumRegisterFailed
     case undefine
 }
 
@@ -45,6 +46,8 @@ public extension RevolutionError {
             return "Thanh toán đã bị huỷ."
         case .generateVideoFailed:
             return "Có lỗi xảy ra xin thử lại sau"
+        case .premiumRegisterFailed:
+            return "Đăng ký Yummy Premium không thành công. Vui lòng thử lại sau"
         }
     }
     

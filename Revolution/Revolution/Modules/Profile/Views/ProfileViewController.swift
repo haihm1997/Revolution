@@ -13,13 +13,13 @@ import SnapKit
 class ProfileViewController: BaseViewController {
     
     let bannerImage = configure(UIImageView()) {
-        $0.image = UIImage(name: .premiun)
+        $0.image = UIImage(name: .basic)
         $0.backgroundColor = .clear
         $0.contentMode = .scaleToFill
     }
     
     let centerImage = configure(UIImageView()) {
-        $0.image = UIImage(name: .icPremium)
+        $0.image = UIImage(name: .basic)
         $0.backgroundColor = .clear
     }
     
@@ -88,15 +88,42 @@ class ProfileViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         
+        bind()
+        updateState(isPremium: YummyPhotoApplication.shared.isPurchased)
+    }
+    
+    private func bind() {
         viewModel.isPremium.bind(to: contentBinder).disposed(by: rx.disposeBag)
         premiumView.button.rx.tap
             .bind(to: didTapPurchase)
             .disposed(by: rx.disposeBag)
+        restoreView.button.rx.tap
+            .bind(to: viewModel.inRestoreProduct)
+            .disposed(by: rx.disposeBag)
+        viewModel.outActivity.bind(to: loadingBinder).disposed(by: rx.disposeBag)
+        viewModel.outError.bind(to: didReceivedPurhaseError).disposed(by: rx.disposeBag)
+        viewModel.outPurchaseSuccess.bind(to: didPurchaseSuccessBinder).disposed(by: rx.disposeBag)
+        viewModel.outDidRestoreProduct.bind(to: didRestoreProductsBinder).disposed(by: rx.disposeBag)
+    }
+    
+    private func updateState(isPremium: Bool) {
+        basicPlanView.isHidden = isPremium
+        premiumPlanView.isHidden = !isPremium
+        premiumView.isHidden = isPremium
+        restoreView.isHidden = isPremium
+        bannerImage.image = isPremium ? UIImage(name: .premiun) : UIImage(name: .basic)
+        centerImage.image = isPremium ? UIImage(name: .icPremium) : UIImage(name: .icBasic)
     }
     
 }
 
 extension ProfileViewController {
+    
+    var didPurchaseSuccessBinder: Binder<Bool> {
+        return Binder(self) { target, isPurchased in
+            target.updateState(isPremium: isPurchased)
+        }
+    }
     
     var contentBinder: Binder<Bool> {
         return Binder(self) { target, isPremium in
@@ -109,7 +136,24 @@ extension ProfileViewController {
     
     var didTapPurchase: Binder<Void> {
         return Binder(self) { target, _ in
-            print("Purchaseeeeee!")
+            ErrorHandler.show2OptionAlert(message: "Sẵn sàng để trải nghiệm những tính năng tuyệt vời với Yummy Premium.",
+                                          positiveTitleButton: "Đồng ý",
+                                          from: target, didDismiss: nil) { [weak self] in
+                self?.viewModel.inPurchasePremium.accept(())
+            }
+        }
+    }
+    
+    var didReceivedPurhaseError: Binder<RevolutionError> {
+        return Binder(self) { target, error in
+            target.updateState(isPremium: false)
+            ErrorHandler.showDefaultAlert(message: error.debugDescription ?? "", from: target, didDismiss: nil)
+        }
+    }
+    
+    var didRestoreProductsBinder: Binder<Bool> {
+        return Binder(self) { target, isPremium in
+            target.updateState(isPremium: isPremium)
         }
     }
     

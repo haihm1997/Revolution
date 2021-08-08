@@ -46,9 +46,9 @@ class ErrorHandler {
         controller.present(alert, animated: true, completion: nil)
     }
     
-    static func show2OptionAlert(message: String, from controller: UIViewController, didDismiss: (() -> Void)?, didOk: (() -> Void)?) {
+    static func show2OptionAlert(message: String, positiveTitleButton: String = "Ok", from controller: UIViewController, didDismiss: (() -> Void)?, didOk: (() -> Void)?) {
         let alert = UIAlertController(title: "Yummy Photo", message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
+        let okAction = UIAlertAction(title: positiveTitleButton, style: .default) { _ in
             didOk?()
         }
         let cancelAction = UIAlertAction(title: "Đóng", style: .cancel) { _ in

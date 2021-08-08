@@ -18,7 +18,7 @@ extension UIImage {
         case tabBarAccount = "ic_tabbar_account"
         case homeEmpty = "home_empty"
         case basic = "banner_account_guess"
-        case premiun = "banner_account_logged_in"
+        case premiun = "banner_premium"
         case icPremium = "ic_premium"
         case icBasic = "ic_basic"
         case icAdd = "ic_add"

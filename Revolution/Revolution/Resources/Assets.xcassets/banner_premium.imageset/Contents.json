@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "banner_account_logged_in.png",
+      "filename" : "banner_account_guess.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "banner_account_logged_in@2x.png",
+      "filename" : "banner_account_guess@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "banner_account_logged_in@3x.png",
+      "filename" : "banner_account_guess@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -12,7 +12,7 @@ import SnapKit
 class PremiumView: BaseCustomView {
     
     let premiumLabel = configure(UILabel()) {
-        $0.text = "Mua Premium"
+        $0.text = "Nâng cấp Premium"
         $0.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         $0.textColor = .gray
     }

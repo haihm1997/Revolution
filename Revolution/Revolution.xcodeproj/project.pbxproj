@@ -14,15 +14,13 @@
 		6463934D26B3131500AC9191 /* audio3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6463934926B3131300AC9191 /* audio3.mp3 */; };
 		6463934E26B3131500AC9191 /* audio2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6463934A26B3131400AC9191 /* audio2.mp3 */; };
 		6463934F26B3131500AC9191 /* audio1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6463934B26B3131500AC9191 /* audio1.mp3 */; };
-		6463935226B3140C00AC9191 /* GenerateVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6463935126B3140C00AC9191 /* GenerateVideoViewController.swift */; };
-		6463935426B3141700AC9191 /* GenerateVideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6463935326B3141700AC9191 /* GenerateVideoViewModel.swift */; };
 		6463935626B3155300AC9191 /* BottomSheetHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6463935526B3155300AC9191 /* BottomSheetHeaderView.swift */; };
-		6463935926B3178200AC9191 /* SelectAudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6463935826B3178200AC9191 /* SelectAudioCell.swift */; };
 		6463935B26B4574E00AC9191 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6463935A26B4574E00AC9191 /* Helper.swift */; };
 		64A6879126B5A5DB00D58B3E /* RealmVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6879026B5A5DB00D58B3E /* RealmVideo.swift */; };
 		64A6879326B5AD0000D58B3E /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6879226B5AD0000D58B3E /* RealmManager.swift */; };
 		64A6879526B68C3B00D58B3E /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6879426B68C3B00D58B3E /* AddView.swift */; };
 		64B8CE6726BC532C002948F2 /* IAPViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B8CE6626BC532C002948F2 /* IAPViews.swift */; };
+		64C53E1526BEED4700B0E5BA /* YummyPhotoApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C53E1426BEED4700B0E5BA /* YummyPhotoApplication.swift */; };
 		834447D28808EA23240345E6 /* Pods_Revolution.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26916F38FB6D507CA0E943C /* Pods_Revolution.framework */; };
 		BC481DAE26A5CB8400C8A9AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC481DAD26A5CB8400C8A9AE /* AppDelegate.swift */; };
 		BC481DB726A5CB8500C8A9AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC481DB626A5CB8500C8A9AE /* Assets.xcassets */; };
@@ -142,15 +140,13 @@
 		6463934926B3131300AC9191 /* audio3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio3.mp3; sourceTree = "<group>"; };
 		6463934A26B3131400AC9191 /* audio2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio2.mp3; sourceTree = "<group>"; };
 		6463934B26B3131500AC9191 /* audio1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio1.mp3; sourceTree = "<group>"; };
-		6463935126B3140C00AC9191 /* GenerateVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateVideoViewController.swift; sourceTree = "<group>"; };
-		6463935326B3141700AC9191 /* GenerateVideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateVideoViewModel.swift; sourceTree = "<group>"; };
 		6463935526B3155300AC9191 /* BottomSheetHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetHeaderView.swift; sourceTree = "<group>"; };
-		6463935826B3178200AC9191 /* SelectAudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAudioCell.swift; sourceTree = "<group>"; };
 		6463935A26B4574E00AC9191 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		64A6879026B5A5DB00D58B3E /* RealmVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmVideo.swift; sourceTree = "<group>"; };
 		64A6879226B5AD0000D58B3E /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		64A6879426B68C3B00D58B3E /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		64B8CE6626BC532C002948F2 /* IAPViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPViews.swift; sourceTree = "<group>"; };
+		64C53E1426BEED4700B0E5BA /* YummyPhotoApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyPhotoApplication.swift; sourceTree = "<group>"; };
 		86FD2FD925AD14FA8D365DC1 /* Pods_Revolution_RevolutionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Revolution_RevolutionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A38243651311E406480C52 /* Pods-Revolution.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revolution.debug.xcconfig"; path = "Target Support Files/Pods-Revolution/Pods-Revolution.debug.xcconfig"; sourceTree = "<group>"; };
 		BC481DAA26A5CB8400C8A9AE /* Yummy Photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yummy Photo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -302,24 +298,6 @@
 			path = Audios;
 			sourceTree = "<group>";
 		};
-		6463935026B3133F00AC9191 /* GenerateVideo */ = {
-			isa = PBXGroup;
-			children = (
-				6463935726B3176300AC9191 /* Cell */,
-				6463935126B3140C00AC9191 /* GenerateVideoViewController.swift */,
-				6463935326B3141700AC9191 /* GenerateVideoViewModel.swift */,
-			);
-			path = GenerateVideo;
-			sourceTree = "<group>";
-		};
-		6463935726B3176300AC9191 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				6463935826B3178200AC9191 /* SelectAudioCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		BC481DA126A5CB8400C8A9AE = {
 			isa = PBXGroup;
 			children = (
@@ -427,7 +405,6 @@
 		BC481DF426A5D1DB00C8A9AE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				6463935026B3133F00AC9191 /* GenerateVideo */,
 				BCB37A6C26A87BAE008BF43A /* Profile */,
 				BCB37A5C26A87A27008BF43A /* CommonView */,
 				BCB37A5126A87A24008BF43A /* Main */,
@@ -441,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				BC481DAD26A5CB8400C8A9AE /* AppDelegate.swift */,
+				64C53E1426BEED4700B0E5BA /* YummyPhotoApplication.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -1128,10 +1106,8 @@
 				BC64A0B926A9BFD8008ECAAE /* HighlightImageCell.swift in Sources */,
 				BC64A0B726A9BEDD008ECAAE /* ImageCell.swift in Sources */,
 				BC481DEA26A5D0FE00C8A9AE /* Assembler+.swift in Sources */,
-				6463935226B3140C00AC9191 /* GenerateVideoViewController.swift in Sources */,
 				BC481E0426A5D1F500C8A9AE /* UIImageView+.swift in Sources */,
 				BC481E1426A5D25900C8A9AE /* BaseViewController.swift in Sources */,
-				6463935926B3178200AC9191 /* SelectAudioCell.swift in Sources */,
 				BC481E7D26A5D39A00C8A9AE /* MovieDetailModel.swift in Sources */,
 				BC481E0526A5D1F500C8A9AE /* View+.swift in Sources */,
 				BC481E7226A5D39A00C8A9AE /* NetworkError.swift in Sources */,
@@ -1182,6 +1158,7 @@
 				BC481E8826A5DBDA00C8A9AE /* SKProduct+.swift in Sources */,
 				BC481E7126A5D39A00C8A9AE /* NetworkLogger.swift in Sources */,
 				BC481E8426A5D68B00C8A9AE /* IAPManager.swift in Sources */,
+				64C53E1526BEED4700B0E5BA /* YummyPhotoApplication.swift in Sources */,
 				BC481E0626A5D1F500C8A9AE /* UIImage+.swift in Sources */,
 				BCB37A9A26A885AE008BF43A /* HomeEmptyView.swift in Sources */,
 				BC481E0226A5D1F500C8A9AE /* String+.swift in Sources */,
@@ -1195,7 +1172,6 @@
 				BC481E7A26A5D39A00C8A9AE /* Single+Decodable.swift in Sources */,
 				BC481E7526A5D39A00C8A9AE /* HTTPEncoder.swift in Sources */,
 				BCB37A7026A87BC4008BF43A /* ProfileViewController.swift in Sources */,
-				6463935426B3141700AC9191 /* GenerateVideoViewModel.swift in Sources */,
 				BCB37A6426A87A27008BF43A /* CustomTabBar.swift in Sources */,
 				BC481E7026A5D39A00C8A9AE /* Configs.swift in Sources */,
 			);

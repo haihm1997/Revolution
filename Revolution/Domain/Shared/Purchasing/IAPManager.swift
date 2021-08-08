@@ -10,22 +10,32 @@ import Foundation
 import StoreKit
 import RxSwift
 
+let premiumProductID = "com.photo.yummy_photo.premium"
+
+typealias BuyProductHandler = ((Result<Bool, Error>) -> Void)
+typealias OnReceivedProductsHandler = ((Result<[SKProduct], RevolutionError>) -> Void)
+typealias OnProductRestoreHandler = ((Int) -> Void)
+
 class IAPManager: NSObject {
     
     static let shared = IAPManager()
     
-    var onReceiveProductsHandler: ((Result<[SKProduct], RevolutionError>) -> Void)?
+    var onReceiveProductsHandler: OnReceivedProductsHandler?
     
-    var onBuyProductHandler: ((Result<Bool, Error>) -> Void)?
+    var onBuyProductHandler: BuyProductHandler?
+    
+    var onProductRestoreHandler: OnProductRestoreHandler?
     
     var totalRestoredPurchases = 0
+    
+    var premiumProducts: [SKProduct] = []
     
     private override init() {
         super.init()
     }
     
     private func getProductIDs() -> [String] {
-        return []
+        return [premiumProductID]
     }
     
     func getProducts(withHandler productsReceiveHandler: @escaping (_ result: Result<[SKProduct], RevolutionError>) -> Void) {
@@ -58,10 +68,28 @@ class IAPManager: NSObject {
         onBuyProductHandler = handler
     }
     
-    func restorePurchases(withHandler handler: @escaping ((_ result: Result<Bool, Error>) -> Void)) {
-        onBuyProductHandler = handler
+    func restorePurchases(withHandler handler: @escaping OnProductRestoreHandler) {
+        onProductRestoreHandler = handler
         totalRestoredPurchases = 0
         SKPaymentQueue.default().restoreCompletedTransactions()
+    }
+    
+    func verifyReceipt() {
+        guard let appStoreReceiptURL = Bundle.main.appStoreReceiptURL,
+              FileManager.default.fileExists(atPath: appStoreReceiptURL.path) else {
+            return
+        }
+        let userDefault = UserDefaults.standard
+        do {
+            let receiptData = try Data(contentsOf: appStoreReceiptURL, options: .alwaysMapped)
+            let receiptString = receiptData.base64EncodedData(options: [])
+            userDefault.setValue(!receiptString.isEmpty, forKey: "isPurchased")
+            YummyPhotoApplication.shared.isPurchased = !receiptString.isEmpty
+        } catch {
+            print("Could not read receipt data with error!!!!: " + error.localizedDescription)
+            userDefault.setValue(false, forKey: "isPurchased")
+            YummyPhotoApplication.shared.isPurchased = false
+        }
     }
     
 }
@@ -71,6 +99,7 @@ extension IAPManager: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         let products = response.products
         if products.count > 0 {
+            premiumProducts = products
             onReceiveProductsHandler?(.success(products))
         } else {
             onReceiveProductsHandler?(.failure(.noProductsFound))
@@ -119,12 +148,7 @@ extension IAPManager: SKPaymentTransactionObserver {
     }
     
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        if totalRestoredPurchases != 0 {
-            onBuyProductHandler?(.success(true))
-        } else {
-            print("IAP: No purchases to restore!")
-            onBuyProductHandler?(.success(false))
-        }
+        onProductRestoreHandler?(totalRestoredPurchases)
     }
     
 }

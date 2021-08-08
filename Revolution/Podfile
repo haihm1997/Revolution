@@ -19,7 +19,6 @@ target 'Revolution' do
     pod 'ZLImageEditor'
     pod 'NYTPhotoViewer'
     pod 'FSPagerView'
-    pod 'SwiftVideoGenerator'
     pod "BSImagePicker", "~> 3.1"
     pod 'RealmSwift'
 

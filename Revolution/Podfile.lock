@@ -49,7 +49,6 @@ PODS:
   - RxSwift (5.1.2)
   - SnapKit (5.0.1)
   - SteviaLayout (4.7.3)
-  - SwiftVideoGenerator (1.4.0)
   - Swinject (2.7.1)
   - YPImagePicker (4.5.0):
     - PryntTrimmerView (~> 4.0.2)
@@ -72,7 +71,6 @@ DEPENDENCIES:
   - RxDataSources
   - RxSwift (~> 5)
   - SnapKit (~> 5.0.0)
-  - SwiftVideoGenerator
   - Swinject
   - YPImagePicker
   - ZLImageEditor
@@ -100,7 +98,6 @@ SPEC REPOS:
     - RxSwift
     - SnapKit
     - SteviaLayout
-    - SwiftVideoGenerator
     - Swinject
     - YPImagePicker
     - ZLImageEditor
@@ -127,11 +124,10 @@ SPEC CHECKSUMS:
   RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
-  SwiftVideoGenerator: 804637c18f68a4f205d806e305ebceb4adcf3d25
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
   ZLImageEditor: eac3900c3311615e2ca6ce19987c36e07ea4e1dd
 
-PODFILE CHECKSUM: 6de01412c9cf33c81fde736b3cb5fe94b417ee14
+PODFILE CHECKSUM: 6ed2961e2b8bac778c7df385108de6f6ab546744
 
 COCOAPODS: 1.10.2
