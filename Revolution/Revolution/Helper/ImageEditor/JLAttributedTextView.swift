@@ -1,23 +1,15 @@
-//
-//  JLAttributedTextView.swift
-//  JLAttributesTextView
-//
-//  Created by 刘业臻 on 16/4/24.
-//  Copyright © 2016年 luiyezheng. All rights reserved.
-//
-
 import UIKit
 
 public class JLAttributedTextView: UITextView {
 
     
-    public private(set) var textAttributes: [NSAttributedStringKey: AnyObject] = [:]
+    public private(set) var textAttributes: [NSAttributedString.Key: AnyObject] = [:]
     
     //MARK: -
     //MARK: Alpha
     public var textAlpha: CGFloat = 1 {
         didSet {
-            textAttributes[NSAttributedStringKey.foregroundColor] = foregroundColor?.withAlphaComponent(textAlpha)
+            textAttributes[NSAttributedString.Key.foregroundColor] = foregroundColor?.withAlphaComponent(textAlpha)
             self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
         }
     }
@@ -28,7 +20,7 @@ public class JLAttributedTextView: UITextView {
     public var fontName: String = "HelveticaNeue" {
         didSet {
             let font = UIFont(name: fontName, size: fontSize)
-            textAttributes[NSAttributedStringKey.font] = font
+            textAttributes[NSAttributedString.Key.font] = font
             self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
             
             self.font = font
@@ -38,7 +30,7 @@ public class JLAttributedTextView: UITextView {
     public var fontSize: CGFloat = 20 {
         didSet {
             let font = UIFont(name: fontName, size: fontSize)
-            textAttributes[NSAttributedStringKey.font] = font
+            textAttributes[NSAttributedString.Key.font] = font
             self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
             
             self.font = font
@@ -50,7 +42,7 @@ public class JLAttributedTextView: UITextView {
     
     public var foregroundColor: UIColor? {
         didSet {
-            textAttributes[NSAttributedStringKey.foregroundColor] = foregroundColor
+            textAttributes[NSAttributedString.Key.foregroundColor] = foregroundColor
             self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
         }
     }
@@ -79,7 +71,7 @@ public class JLAttributedTextView: UITextView {
 
     public var paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle() {
         didSet {
-            textAttributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
+            textAttributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
         }
     }
 
@@ -89,7 +81,7 @@ public class JLAttributedTextView: UITextView {
         }
         set {
             paragraphStyle.alignment = newValue
-            textAttributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
+            textAttributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
             self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
             
         }
@@ -102,7 +94,7 @@ public class JLAttributedTextView: UITextView {
         
         set {
             paragraphStyle.lineSpacing = newValue
-            textAttributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
+            textAttributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
             self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
             
         }
@@ -115,7 +107,7 @@ public class JLAttributedTextView: UITextView {
         
         set {
             paragraphStyle.paragraphSpacing = newValue
-            textAttributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
+            textAttributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
             self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
         }
     }
@@ -126,8 +118,8 @@ public class JLAttributedTextView: UITextView {
     
     public var shadow: NSShadow? = NSShadow() {
         didSet {
-            textAttributes[NSAttributedStringKey.shadow] = shadow
-            textAttributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
+            textAttributes[NSAttributedString.Key.shadow] = shadow
+            textAttributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
             self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
         }
     }
@@ -135,8 +127,8 @@ public class JLAttributedTextView: UITextView {
     public var textShadowOffset: CGSize! {
         didSet {
             shadow?.shadowOffset = textShadowOffset
-            textAttributes[NSAttributedStringKey.shadow] = shadow
-            textAttributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
+            textAttributes[NSAttributedString.Key.shadow] = shadow
+            textAttributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
             self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
             
         }
@@ -145,8 +137,8 @@ public class JLAttributedTextView: UITextView {
     public var textShadowColor: UIColor! {
         didSet {
             shadow?.shadowColor = textShadowColor
-            textAttributes[NSAttributedStringKey.shadow] = shadow
-            textAttributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
+            textAttributes[NSAttributedString.Key.shadow] = shadow
+            textAttributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
             self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
             
         }
@@ -155,8 +147,8 @@ public class JLAttributedTextView: UITextView {
     public var textShadowBlur: CGFloat! {
         didSet {
             shadow?.shadowBlurRadius = textShadowBlur
-            textAttributes[NSAttributedStringKey.shadow] = shadow
-            textAttributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
+            textAttributes[NSAttributedString.Key.shadow] = shadow
+            textAttributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
             self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
             
         }

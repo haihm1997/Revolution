@@ -2,7 +2,6 @@ PODS:
   - Alamofire (5.4.3)
   - BSImagePicker (3.3.1)
   - Differentiator (4.0.1)
-  - FittedSheets (2.4.1)
   - FSPagerView (0.8.3)
   - Kingfisher (6.3.0)
   - MBProgressHUD (1.2.0)
@@ -16,6 +15,7 @@ PODS:
     - PINRemoteImage/iOS (~> 3.0.1)
     - PINRemoteImage/PINCache
   - NYTPhotoViewer/Core (5.0.5)
+  - PanModal (1.2.7)
   - PINCache (3.0.3):
     - PINCache/Arc-exception-safe (= 3.0.3)
     - PINCache/Core (= 3.0.3)
@@ -60,12 +60,12 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - BSImagePicker (~> 3.1)
-  - FittedSheets
   - FSPagerView
   - Kingfisher (~> 6.0)
   - MBProgressHUD (~> 1.2.0)
   - "NSObject+Rx"
   - NYTPhotoViewer
+  - PanModal
   - RealmSwift
   - RxCocoa (~> 5)
   - RxDataSources
@@ -80,12 +80,12 @@ SPEC REPOS:
     - Alamofire
     - BSImagePicker
     - Differentiator
-    - FittedSheets
     - FSPagerView
     - Kingfisher
     - MBProgressHUD
     - "NSObject+Rx"
     - NYTPhotoViewer
+    - PanModal
     - PINCache
     - PINOperation
     - PINRemoteImage
@@ -106,12 +106,12 @@ SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   BSImagePicker: 0fe04b574d4d6b81093785d2af6c26227efc8428
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
-  FittedSheets: 839b9d261e446cfa9ae8d7229d266f22b30f8be8
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
   NYTPhotoViewer: 6f50ea92f265d54a350b39a7ab7a1b91ca487ff6
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
   PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
   PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
@@ -128,6 +128,6 @@ SPEC CHECKSUMS:
   YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
   ZLImageEditor: eac3900c3311615e2ca6ce19987c36e07ea4e1dd
 
-PODFILE CHECKSUM: 6ed2961e2b8bac778c7df385108de6f6ab546744
+PODFILE CHECKSUM: 8975ea31b411593cf8508cc509761bc8e3c903ce
 
 COCOAPODS: 1.10.2

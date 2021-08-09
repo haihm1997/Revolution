@@ -14,7 +14,7 @@ target 'Revolution' do
     pod 'MBProgressHUD', '~> 1.2.0'
     pod 'Kingfisher', '~> 6.0'
     pod 'RxDataSources'
-    pod 'FittedSheets'
+    pod 'PanModal'
     pod 'YPImagePicker'
     pod 'ZLImageEditor'
     pod 'NYTPhotoViewer'
