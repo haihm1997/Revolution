@@ -16,28 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_icon" translatesAutoresizingMaskIntoConstraints="NO" id="sSI-UM-hFK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-icon" translatesAutoresizingMaskIntoConstraints="NO" id="sSI-UM-hFK">
                                 <rect key="frame" x="102" y="343" width="210" height="210"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="210" id="5ga-6m-IJJ"/>
-                                    <constraint firstAttribute="height" constant="210" id="qYw-RO-T24"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="sSI-UM-hFK" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ccf-k9-KUo"/>
-                            <constraint firstItem="sSI-UM-hFK" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zTU-rz-j4i"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
-        <image name="splash_icon" width="228" height="228"/>
+        <image name="bg-icon" width="867" height="676"/>
     </resources>
 </document>

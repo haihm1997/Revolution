@@ -121,8 +121,7 @@ extension TabBarController {
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        guard let firstNav = self.viewControllers?.first as? UINavigationController else { return }
-        (firstNav.viewControllers.first as? HomeViewController)?.viewModel.getPhotos()
+        
     }
     
     private func configCamera() -> YPImagePickerConfiguration {

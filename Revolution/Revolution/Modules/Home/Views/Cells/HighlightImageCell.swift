@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FSPagerView
 
 class HighlightImageCell: BaseCollectionViewCell {
     

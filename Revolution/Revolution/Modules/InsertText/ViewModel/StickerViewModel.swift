@@ -12,6 +12,12 @@ import RxCocoa
 
 class StickerViewModel: BaseViewModel {
     
+    let selectedImage: UIImage
+    let selectedFont: YummyFont
     
+    init(image: UIImage, selectedFont: YummyFont) {
+        self.selectedImage = image
+        self.selectedFont = selectedFont
+    }
     
 }

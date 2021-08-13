@@ -11,76 +11,41 @@ import RxSwift
 import RxRelay
 import Photos
 
-struct YMVideo {
-    var url: URL?
-    var previewImage: UIImage?
-    var id: String
-    let original: RealmVideo
+enum UserPlan {
+    case basic
+    case premium
     
-    init(_ realmVideo: RealmVideo) {
-        let videoURL = URL(string: realmVideo.url)
-        self.url = videoURL
-        if let url = videoURL {
-            self.previewImage = Utils.videoPreviewImage(url: url)
+    var stateLabel: String {
+        switch self {
+        case .basic:
+            return "Try"
+        case .premium:
+            return "Premium Plan"
         }
-        self.id = realmVideo.id
-        self.original = realmVideo
     }
+    
 }
 
 class HomeViewModel: BaseViewModel {
     
     var images: [UIImage] = []
-    let realmManager = RealmManager.shared
-    let didTapRemoveItem = PublishRelay<YMVideo>()
-    let outDidRemoveItem = PublishRelay<Bool>()
-    let outDidFetchImages = PublishRelay<Void>()
-    
+    let outAllFonts = BehaviorRelay<[YummyFont]>(value: [])
     
     override init() {
         super.init()
-//        allVideos.accept(realmManager.getObjects(from: RealmVideo.self).map { $0.toYMVideo() })
-//        didTapRemoveItem.subscribe(onNext: { [weak self] item in
-//            var tempResult = self?.allVideos.value ?? []
-//            if let index = tempResult.firstIndex(where: { $0.id == item.id }) {
-//                tempResult.remove(at: index)
-//            }
-//            self?.realmManager.deleteObject(with: item.original, completion: { _ in
-//                self?.outDidRemoveItem.accept(true)
-//                self?.allVideos.accept(tempResult)
-//            })
-//        }).disposed(by: rx.disposeBag)
+        
+        var tempFonts: [YummyFont] = []
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            names.forEach {
+                print("HomeViewModel Font: \($0)")
+                tempFonts.append(YummyFont(font: UIFont(name: $0, size: 26) ?? UIFont.systemFont(ofSize: 26),
+                                           name: $0))
+            }
+        }
+        outAllFonts.accept(tempFonts)
     }
     
-    func getPhotos() {
-
-        let manager = PHImageManager.default()
-        let requestOptions = PHImageRequestOptions()
-        requestOptions.isSynchronous = false
-        requestOptions.deliveryMode = .highQualityFormat
-        // .highQualityFormat will return better quality photos
-        let fetchOptions = PHFetchOptions()
-        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-
-        let results: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-        if results.count > 0 {
-            for i in 0..<results.count {
-                let asset = results.object(at: i)
-                let size = CGSize(width: 700, height: 700)
-                manager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: requestOptions) { (image, _) in
-                    if let image = image {
-                        self.images.append(image)
-                        self.outDidFetchImages.accept(())
-                    } else {
-                        print("error asset to image")
-                    }
-                }
-            }
-        } else {
-            print("no photos to display")
-        }
-
-    }
     
     
     

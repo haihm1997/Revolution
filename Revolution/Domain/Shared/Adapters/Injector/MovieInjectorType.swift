@@ -8,6 +8,3 @@
 
 import Foundation
 
-public protocol MovieInjectorType {
-    func getMovieService() -> MovieServiceType
-}

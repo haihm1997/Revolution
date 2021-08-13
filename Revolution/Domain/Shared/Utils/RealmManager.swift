@@ -21,8 +21,8 @@ class RealmManager {
     private var realm: Realm!
     
     private init() {
-        let config = Realm.Configuration(objectTypes: [RealmVideo.self])
-        self.realm = try! Realm(configuration: config)
+//        let config = Realm.Configuration(objectTypes: [RealmVideo.self])
+//        self.realm = try! Realm(configuration: config)
     }
     
     func saveObject<T: Object>(object: T, completion: RealmDataCallBack?) {
