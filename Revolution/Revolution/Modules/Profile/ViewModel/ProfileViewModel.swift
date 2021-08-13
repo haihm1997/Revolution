@@ -64,6 +64,7 @@ class ProfileUseCase {
                 case .success(let success):
                     let userDefault = UserDefaults.standard
                     userDefault.setValue(success, forKey: "isPurchased")
+                    YummyPhotoApplication.shared.isPurchased = true
                     single(.success(true))
                 case .failure:
                     single(.error(RevolutionError.premiumRegisterFailed))

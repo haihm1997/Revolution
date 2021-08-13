@@ -11,14 +11,15 @@ import SnapKit
 import RxCocoa
 import RxDataSources
 import RxSwift
-import AVKit
-import BSImagePicker
 import Photos
+import YPImagePicker
+import Toast_Swift
 
 class HomeViewController: BaseViewController {
     
     let bannerImage = configure(UIImageView()) {
-        $0.image = UIImage(name: .basic)
+        let isPurchased = YummyPhotoApplication.shared.isPurchased
+        $0.image = isPurchased ? UIImage(name: .premiun) : UIImage(name: .basic)
         $0.backgroundColor = .clear
         $0.contentMode = .scaleToFill
     }
@@ -39,7 +40,6 @@ class HomeViewController: BaseViewController {
         collectionView.register(FontPreviewCell.self, forCellWithReuseIdentifier: FontPreviewCell.className)
         return collectionView
     }()
-
     
     var viewModel = HomeViewModel()
     
@@ -110,31 +110,66 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
 extension HomeViewController {
     
-    var didChooseFont: Binder<YummyFont> {
-        return Binder(self) { target, font in
-            let imagePicker = ImagePickerController()
-            Settings.shared.selection.max = 1
-            target.presentImagePicker(imagePicker) { asset in
-                ()
-            } deselect: { asset in
-                ()
-            } cancel: { assets in
-                ()
-            } finish: { assets in
-                guard let asset = assets.first else { return }
-                PHImageManager.default().requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFit, options: nil) { (image, info) in
-                    target.openEditScreen(image: image, font: font)
-                }
+    private func openPhotoPicker(font: YummyFont) {
+        let config = configCamera()
+        let picker = YPImagePicker(configuration: config)
+        picker.didFinishPicking { [weak self] items, isSuccess in
+            guard let modifiedImage = items.singlePhoto?.image else {
+                picker.dismiss(animated: true, completion: nil)
+                return
             }
+            picker.dismiss(animated: true) {
+                self?.openEditPhoto(with: modifiedImage)
+            }
+        }
+        self.present(picker, animated: true, completion: nil)
+    }
+    
+    private func configCamera() -> YPImagePickerConfiguration {
+        var config = YPImagePickerConfiguration()
+        config.albumName = "YummyPhoto"
+        config.startOnScreen = YPPickerScreen.photo
+        config.screens = [.library]
+        config.showsCrop = .none
+        config.targetImageSize = YPImageSize.original
+        config.overlayView = UIView()
+        config.hidesStatusBar = true
+        config.hidesBottomBar = false
+        config.hidesCancelButton = false
+        config.preferredStatusBarStyle = UIStatusBarStyle.default
+        config.library.options = nil
+        config.library.onlySquare = false
+        config.library.isSquareByDefault = true
+        config.library.minWidthForItem = nil
+        config.library.mediaType = YPlibraryMediaType.photo
+        config.library.defaultMultipleSelection = false
+        config.library.maxNumberOfItems = 1
+        config.library.minNumberOfItems = 1
+        config.library.numberOfItemsInRow = 4
+        config.library.spacingBetweenItems = 1.0
+        config.library.skipSelectionsGallery = false
+        config.library.preselectedItems = nil
+    
+        return config
+    }
+    
+    func openEditPhoto(with image: UIImage) {
+        let isPremium = YummyPhotoApplication.shared.isPurchased
+        if isPremium {
+            ZLImageEditorConfiguration.default().editImageTools = [.draw, .clip, .imageSticker, .textSticker, .mosaic, .filter]
+        } else {
+            ZLImageEditorConfiguration.default().editImageTools = [.clip, .mosaic, .filter]
+        }
+        ZLEditImageViewController.showEditImageVC(parentVC: self, image: image, editModel: nil) { (resImage, editModel) in
+            UIImageWriteToSavedPhotosAlbum(resImage, nil, nil, nil)
+            self.view.makeToast("Lưu ảnh thành công!")
         }
     }
     
-    private func openEditScreen(image: UIImage?, font: YummyFont) {
-        guard let image = image else { return }
-        let stickerVC = StickerViewController()
-        let stickerVM = StickerViewModel(image: image, selectedFont: font)
-        stickerVC.viewModel = stickerVM
-        presentPanModal(stickerVC)
+    var didChooseFont: Binder<YummyFont> {
+        return Binder(self) { target, font in
+            target.openPhotoPicker(font: font)
+        }
     }
     
 }

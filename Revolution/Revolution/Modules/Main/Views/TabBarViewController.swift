@@ -10,7 +10,6 @@ import UIKit
 import SnapKit
 import RxCocoa
 import YPImagePicker
-import ZLImageEditor
 
 enum YMTabBarItemType: Int, CaseIterable {
     case home = 0
@@ -106,22 +105,11 @@ extension TabBarController {
                     return
                 }
                 picker.dismiss(animated: true) {
-                    targer.openEditPhoto(with: modifiedImage)
+                    UIImageWriteToSavedPhotosAlbum(modifiedImage, nil, nil, nil)
                 }
             }
             self.present(picker, animated: true, completion: nil)
         }
-    }
-    
-    func openEditPhoto(with image: UIImage) {
-        ZLImageEditorConfiguration.default().editImageTools = [.draw, .clip, .imageSticker, .textSticker, .mosaic, .filter]
-        ZLEditImageViewController.showEditImageVC(parentVC: self, image: image, editModel: nil) { [self] (resImage, editModel) in
-            UIImageWriteToSavedPhotosAlbum(resImage, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-        }
-    }
-    
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        
     }
     
     private func configCamera() -> YPImagePickerConfiguration {
@@ -132,9 +120,9 @@ extension TabBarController {
         config.showsPhotoFilters = true
         config.showsVideoTrimmer = true
         config.shouldSaveNewPicturesToAlbum = true
-        config.albumName = "DefaultYPImagePickerAlbumName"
+        config.albumName = "YummyPhoto"
         config.startOnScreen = YPPickerScreen.photo
-        config.screens = [.library, .photo]
+        config.screens = [.photo]
         config.showsCrop = .none
         config.targetImageSize = YPImageSize.original
         config.overlayView = UIView()

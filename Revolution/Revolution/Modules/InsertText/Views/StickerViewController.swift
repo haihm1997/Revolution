@@ -9,7 +9,6 @@
 import UIKit
 import RxCocoa
 import RxSwift
-import PanModal
 
 class StickerViewController: BaseViewController {
     
@@ -31,10 +30,12 @@ class StickerViewController: BaseViewController {
     
     let saveButton = configure(UIButton()) {
         $0.setTitle("Lưu", for: .normal)
+        $0.setTitleColor(.blue, for: .normal)
     }
     
     let addButton = configure(UIButton()) {
         $0.setTitle("Thêm", for: .normal)
+        $0.setTitleColor(.blue, for: .normal)
     }
     
     override func loadView() {
@@ -111,13 +112,12 @@ extension StickerViewController {
         return Binder(self) { target, _ in
             target.stickerView.addLabel()
             
-            target.stickerView.textColor = UIColor.white
-            target.stickerView.textAlpha = 1
             target.stickerView.currentlyEditingLabel.closeView!.image = UIImage(named: "cancel")
             target.stickerView.currentlyEditingLabel.rotateView?.image = UIImage(named: "rotate-option")
             target.stickerView.currentlyEditingLabel.border?.strokeColor = UIColor.white.cgColor
-            target.stickerView.currentlyEditingLabel.labelTextView?.font = target.viewModel.selectedFont.font
+            target.stickerView.currentlyEditingLabel.labelTextView?.font = UIFont.systemFont(ofSize: 40)
             target.stickerView.currentlyEditingLabel.labelTextView?.becomeFirstResponder()
+            target.stickerView.fontName = target.viewModel.selectedFont.name
         }
     }
     

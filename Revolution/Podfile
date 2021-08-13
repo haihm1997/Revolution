@@ -9,17 +9,11 @@ target 'Revolution' do
     pod 'RxSwift', '~> 5'
     pod 'RxCocoa', '~> 5'
     pod 'SnapKit', '~> 5.0.0'
-    pod 'Swinject'
     pod 'NSObject+Rx'
     pod 'MBProgressHUD', '~> 1.2.0'
-    pod 'Kingfisher', '~> 6.0'
     pod 'RxDataSources'
-    pod 'PanModal'
     pod 'YPImagePicker'
-    pod 'ZLImageEditor'
-    pod 'NYTPhotoViewer'
-    pod "BSImagePicker", "~> 3.1"
-    pod 'RealmSwift'
+    pod 'Toast-Swift', '~> 5.0.1'
 
   target 'RevolutionTests' do
     inherit! :search_paths
