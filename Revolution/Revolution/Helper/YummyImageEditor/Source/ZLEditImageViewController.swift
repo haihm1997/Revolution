@@ -164,7 +164,9 @@ public class ZLEditImageViewController: UIViewController {
         zl_debugPrint("ZLEditImageViewController deinit")
     }
     
-    @objc public class func showEditImageVC(parentVC: UIViewController?, animate: Bool = true, image: UIImage, editModel: ZLEditImageModel? = nil, completion: ( (UIImage, ZLEditImageModel) -> Void )? ) {
+    @objc public class func showEditImageVC(parentVC: UIViewController?, animate: Bool = true,
+                                            image: UIImage, editModel: ZLEditImageModel? = nil, font: UIFont,
+                                            completion: ( (UIImage, ZLEditImageModel) -> Void )? ) {
         let tools = ZLImageEditorConfiguration.default().editImageTools
         if ZLImageEditorConfiguration.default().showClipDirectlyIfOnlyHasClipTool, tools.count == 1, tools.contains(.clip) {
             let vc = ZLClipImageViewController(image: image, editRect: editModel?.editRect, angle: editModel?.angle ?? 0, selectRatio: editModel?.selectRatio)
@@ -176,7 +178,7 @@ public class ZLEditImageViewController: UIViewController {
             vc.modalPresentationStyle = .fullScreen
             parentVC?.present(vc, animated: animate, completion: nil)
         } else {
-            let vc = ZLEditImageViewController(image: image, editModel: editModel)
+            let vc = ZLEditImageViewController(image: image, editModel: editModel, font: font)
             vc.editFinishBlock = {  (ei, editImageModel) in
                 completion?(ei, editImageModel)
             }
@@ -186,7 +188,7 @@ public class ZLEditImageViewController: UIViewController {
         }
     }
     
-    @objc init(image: UIImage, editModel: ZLEditImageModel? = nil) {
+    @objc init(image: UIImage, editModel: ZLEditImageModel? = nil, font: UIFont) {
         self.originalImage = image.fixOrientation()
         self.editImage = self.originalImage
         self.editRect = editModel?.editRect ?? CGRect(origin: .zero, size: image.size)
@@ -196,6 +198,7 @@ public class ZLEditImageViewController: UIViewController {
         self.mosaicPaths = editModel?.mosaicPaths ?? []
         self.angle = editModel?.angle ?? 0
         self.selectRatio = editModel?.selectRatio
+        self.selectedFont = font
         
         var ts = ZLImageEditorConfiguration.default().editImageTools
         if ts.contains(.imageSticker), ZLImageEditorConfiguration.default().imageStickerContainerView == nil {
@@ -828,8 +831,10 @@ public class ZLEditImageViewController: UIViewController {
         let scale = self.scrollView.zoomScale
         let size = ZLTextStickerView.calculateSize(text: text, width: self.view.frame.width)
         let originFrame = self.getStickerOriginFrame(size)
-        
-        let textSticker = ZLTextStickerView(text: text, textColor: textColor, bgColor: bgColor, originScale: 1 / scale, originAngle: -self.angle, originFrame: originFrame)
+        let textSticker = ZLTextStickerView(text: text, textColor: textColor,
+                                            bgColor: bgColor, originScale: 1 / scale,
+                                            originAngle: -self.angle, originFrame: originFrame,
+                                            font: selectedFont)
         self.stickersContainer.addSubview(textSticker)
         textSticker.frame = originFrame
         

@@ -42,6 +42,7 @@ class ZLTextStickerView: UIView, ZLStickerViewAdditional {
         }
     }
     
+    var font: UIFont
     var textColor: UIColor {
         didSet {
             label.textColor = textColor
@@ -79,7 +80,7 @@ class ZLTextStickerView: UIView, ZLStickerViewAdditional {
     
     // Conver all states to model.
     var state: ZLTextStickerState {
-        return ZLTextStickerState(text: self.text, textColor: self.textColor, bgColor: self.bgColor, originScale: self.originScale, originAngle: self.originAngle, originFrame: self.originFrame, gesScale: self.gesScale, gesRotation: self.gesRotation, totalTranslationPoint: self.totalTranslationPoint)
+        return ZLTextStickerState(text: self.text, textColor: self.textColor, bgColor: self.bgColor, originScale: self.originScale, originAngle: self.originAngle, originFrame: self.originFrame, gesScale: self.gesScale, gesRotation: self.gesRotation, totalTranslationPoint: self.totalTranslationPoint, font: self.font)
     }
     
     deinit {
@@ -87,17 +88,17 @@ class ZLTextStickerView: UIView, ZLStickerViewAdditional {
     }
     
     convenience init(from state: ZLTextStickerState) {
-        self.init(text: state.text, textColor: state.textColor, bgColor: state.bgColor, originScale: state.originScale, originAngle: state.originAngle, originFrame: state.originFrame, gesScale: state.gesScale, gesRotation: state.gesRotation, totalTranslationPoint: state.totalTranslationPoint, showBorder: false)
+        self.init(text: state.text, textColor: state.textColor, bgColor: state.bgColor, originScale: state.originScale, originAngle: state.originAngle, originFrame: state.originFrame, gesScale: state.gesScale, gesRotation: state.gesRotation, totalTranslationPoint: state.totalTranslationPoint, showBorder: false, font: state.font)
     }
     
-    init(text: String, textColor: UIColor, bgColor: UIColor, originScale: CGFloat, originAngle: CGFloat, originFrame: CGRect, gesScale: CGFloat = 1, gesRotation: CGFloat = 0, totalTranslationPoint: CGPoint = .zero, showBorder: Bool = true) {
+    init(text: String, textColor: UIColor, bgColor: UIColor, originScale: CGFloat, originAngle: CGFloat, originFrame: CGRect, gesScale: CGFloat = 1, gesRotation: CGFloat = 0, totalTranslationPoint: CGPoint = .zero, showBorder: Bool = true, font: UIFont) {
         self.originScale = originScale
         self.text = text
         self.textColor = textColor
         self.bgColor = bgColor
         self.originAngle = originAngle
         self.originFrame = originFrame
-        
+        self.font = font
         super.init(frame: .zero)
         
         self.gesScale = gesScale
@@ -114,7 +115,7 @@ class ZLTextStickerView: UIView, ZLStickerViewAdditional {
         
         self.label = UILabel()
         self.label.text = text
-        self.label.font = UIFont.boldSystemFont(ofSize: ZLTextStickerView.fontSize)
+        self.label.font = font
         self.label.textColor = textColor
         self.label.backgroundColor = bgColor
         self.label.numberOfLines = 0
@@ -423,8 +424,9 @@ public class ZLTextStickerState: NSObject {
     let gesScale: CGFloat
     let gesRotation: CGFloat
     let totalTranslationPoint: CGPoint
+    let font: UIFont
     
-    init(text: String, textColor: UIColor, bgColor: UIColor, originScale: CGFloat, originAngle: CGFloat, originFrame: CGRect, gesScale: CGFloat, gesRotation: CGFloat, totalTranslationPoint: CGPoint) {
+    init(text: String, textColor: UIColor, bgColor: UIColor, originScale: CGFloat, originAngle: CGFloat, originFrame: CGRect, gesScale: CGFloat, gesRotation: CGFloat, totalTranslationPoint: CGPoint, font: UIFont) {
         self.text = text
         self.textColor = textColor
         self.bgColor = bgColor
@@ -434,6 +436,7 @@ public class ZLTextStickerState: NSObject {
         self.gesScale = gesScale
         self.gesRotation = gesRotation
         self.totalTranslationPoint = totalTranslationPoint
+        self.font = font
         super.init()
     }
     

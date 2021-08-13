@@ -39,7 +39,7 @@ class HomeViewModel: BaseViewModel {
             let names = UIFont.fontNames(forFamilyName: family)
             names.forEach {
                 print("HomeViewModel Font: \($0)")
-                tempFonts.append(YummyFont(font: UIFont(name: $0, size: 26) ?? UIFont.systemFont(ofSize: 26),
+                tempFonts.append(YummyFont(font: UIFont(name: $0, size: 30) ?? UIFont.systemFont(ofSize: 26),
                                            name: $0))
             }
         }

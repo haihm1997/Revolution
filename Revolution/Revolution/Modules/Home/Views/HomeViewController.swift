@@ -18,8 +18,6 @@ import Toast_Swift
 class HomeViewController: BaseViewController {
     
     let bannerImage = configure(UIImageView()) {
-        let isPurchased = YummyPhotoApplication.shared.isPurchased
-        $0.image = isPurchased ? UIImage(name: .premiun) : UIImage(name: .basic)
         $0.backgroundColor = .clear
         $0.contentMode = .scaleToFill
     }
@@ -54,11 +52,6 @@ class HomeViewController: BaseViewController {
             maker.height.equalTo(Constant.Size.screenWidth * 0.56)
         }
         
-//        chooseFontLabel.snp.makeConstraints { maker  in
-//            maker.top.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(8)
-//            maker.centerX.equalToSuperview()
-//        }
-//
         collectionView.snp.makeConstraints { maker in
             maker.top.leading.trailing.bottom.equalToSuperview()
         }
@@ -69,6 +62,11 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         bindViewModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let isPurchased = YummyPhotoApplication.shared.isPurchased
+        bannerImage.image = isPurchased ? UIImage(name: .premiun) : UIImage(name: .basic)
     }
     
     private func bindViewModel() {
@@ -119,7 +117,7 @@ extension HomeViewController {
                 return
             }
             picker.dismiss(animated: true) {
-                self?.openEditPhoto(with: modifiedImage)
+                self?.openEditPhoto(with: modifiedImage, font: font.font)
             }
         }
         self.present(picker, animated: true, completion: nil)
@@ -153,14 +151,14 @@ extension HomeViewController {
         return config
     }
     
-    func openEditPhoto(with image: UIImage) {
+    func openEditPhoto(with image: UIImage, font: UIFont) {
         let isPremium = YummyPhotoApplication.shared.isPurchased
         if isPremium {
             ZLImageEditorConfiguration.default().editImageTools = [.draw, .clip, .imageSticker, .textSticker, .mosaic, .filter]
         } else {
             ZLImageEditorConfiguration.default().editImageTools = [.clip, .mosaic, .filter]
         }
-        ZLEditImageViewController.showEditImageVC(parentVC: self, image: image, editModel: nil) { (resImage, editModel) in
+        ZLEditImageViewController.showEditImageVC(parentVC: self, image: image, editModel: nil, font: font) { (resImage, editModel) in
             UIImageWriteToSavedPhotosAlbum(resImage, nil, nil, nil)
             self.view.makeToast("Lưu ảnh thành công!")
         }
