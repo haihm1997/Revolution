@@ -24,55 +24,55 @@
 	<string>Cho phép Yummy Photo sử dụng Camera của bạn</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Cho phép Yummy Photo sử dụng Camera của bạn</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Cho phép Yummy Photo truy cập thư viện của bạn</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-    <string>Cho phép Yummy Photo sử dụng Camera của bạn</string>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>Cho phép Yummy Photo truy cập thư viện của bạn</string>
-    <key>UIAppFonts</key>
-    <array>
-        <string>Shrikhand-Regular.ttf</string>
-        <string>ShadowsIntoLightTwo-Regular.ttf</string>
-        <string>ReenieBeanie-Regular.ttf</string>
-        <string>PinyonScript-Regular.ttf</string>
-        <string>NothingYouCouldDo-Regular.ttf</string>
-        <string>Norican-Regular.ttf</string>
-        <string>Niconne-Regular.ttf</string>
-        <string>MrsSaintDelafield-Regular.ttf</string>
-        <string>MrDafoe-Regular.ttf</string>
-        <string>KosugiMaru-Regular.ttf</string>
-        <string>Italianno-Regular.ttf</string>
-        <string>HerrVonMuellerhoff-Regular.ttf</string>
-        <string>GrandHotel-Regular.ttf</string>
-        <string>Frijole-Regular.ttf</string>
-        <string>CoveredByYourGrace-Regular.ttf</string>
-        <string>LilitaOne-Regular.ttf</string>
-        <string>CinzelDecorative-Regular.ttf</string>
-        <string>CinzelDecorative-Bold.ttf</string>
-        <string>Calligraffitti-Regular.ttf</string>
-        <string>BalooChettan2-ExtraBold.ttf</string>
-        <string>LeckerliOne-Regular.ttf</string>
-        <string>BalooChettan2-Bold.ttf</string>
-        <string>AlexBrush-Regular.ttf</string>
-        <string>Yellowtail-Regular.ttf</string>
-        <string>WindSong-Medium.ttf</string>
-        <string>Sacramento-Regular.ttf</string>
-        <string>RockSalt-Regular.ttf</string>
-        <string>PressStart2P-Regular.ttf</string>
-        <string>PermanentMarker-Regular.ttf</string>
-        <string>Pacifico-Regular.ttf</string>
-        <string>MonteCarlo-Regular.ttf</string>
-        <string>Lobster-Regular.ttf</string>
-        <string>KaushanScript-Regular.ttf</string>
-        <string>IndieFlower-Regular.ttf</string>
-        <string>GreatVibes-Regular.ttf</string>
-        <string>GloriaHallelujah-Regular.ttf</string>
-        <string>DancingScript-VariableFont_wght.ttf</string>
-        <string>ArchitectsDaughter-Regular.ttf</string>
-    </array>
-    <key>UIApplicationSupportsIndirectInputEvents</key>
-    <true/>
-    <key>UILaunchStoryboardName</key>
-    <string>LaunchScreen</string>
+	<string>Cho phép Yummy Photo sử dụng Camera của bạn</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Shrikhand-Regular.ttf</string>
+		<string>ShadowsIntoLightTwo-Regular.ttf</string>
+		<string>ReenieBeanie-Regular.ttf</string>
+		<string>PinyonScript-Regular.ttf</string>
+		<string>NothingYouCouldDo-Regular.ttf</string>
+		<string>Norican-Regular.ttf</string>
+		<string>Niconne-Regular.ttf</string>
+		<string>MrsSaintDelafield-Regular.ttf</string>
+		<string>MrDafoe-Regular.ttf</string>
+		<string>KosugiMaru-Regular.ttf</string>
+		<string>Italianno-Regular.ttf</string>
+		<string>HerrVonMuellerhoff-Regular.ttf</string>
+		<string>GrandHotel-Regular.ttf</string>
+		<string>Frijole-Regular.ttf</string>
+		<string>CoveredByYourGrace-Regular.ttf</string>
+		<string>LilitaOne-Regular.ttf</string>
+		<string>CinzelDecorative-Regular.ttf</string>
+		<string>CinzelDecorative-Bold.ttf</string>
+		<string>Calligraffitti-Regular.ttf</string>
+		<string>BalooChettan2-ExtraBold.ttf</string>
+		<string>LeckerliOne-Regular.ttf</string>
+		<string>BalooChettan2-Bold.ttf</string>
+		<string>AlexBrush-Regular.ttf</string>
+		<string>Yellowtail-Regular.ttf</string>
+		<string>WindSong-Medium.ttf</string>
+		<string>Sacramento-Regular.ttf</string>
+		<string>RockSalt-Regular.ttf</string>
+		<string>PressStart2P-Regular.ttf</string>
+		<string>PermanentMarker-Regular.ttf</string>
+		<string>Pacifico-Regular.ttf</string>
+		<string>MonteCarlo-Regular.ttf</string>
+		<string>Lobster-Regular.ttf</string>
+		<string>KaushanScript-Regular.ttf</string>
+		<string>IndieFlower-Regular.ttf</string>
+		<string>GreatVibes-Regular.ttf</string>
+		<string>GloriaHallelujah-Regular.ttf</string>
+		<string>DancingScript-VariableFont_wght.ttf</string>
+		<string>ArchitectsDaughter-Regular.ttf</string>
+	</array>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -82,8 +82,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
