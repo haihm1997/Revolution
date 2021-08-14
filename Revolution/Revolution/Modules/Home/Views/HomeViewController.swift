@@ -26,13 +26,13 @@ class HomeViewController: BaseViewController {
         $0.textColor = .white
         $0.textAlignment = .center
         $0.text = "Chọn phông chữ"
-        $0.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
+        $0.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
     }
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 24, right: 8)
+        collectionView.contentInset = UIEdgeInsets(top: 24, left: 8, bottom: 24, right: 8)
         collectionView.backgroundColor = UIColor.clear
         collectionView.isHidden = false
         collectionView.register(FontPreviewCell.self, forCellWithReuseIdentifier: FontPreviewCell.className)
@@ -45,15 +45,21 @@ class HomeViewController: BaseViewController {
         super.loadView()
         self.view.backgroundColor = .defaultCollectionBackground
         
-        self.view.addSubviews(bannerImage, collectionView)
+        self.view.addSubviews(bannerImage, collectionView, chooseFontLabel)
         
         bannerImage.snp.makeConstraints { maker in
             maker.top.leading.trailing.equalToSuperview()
             maker.height.equalTo(Constant.Size.screenWidth * 0.56)
         }
         
+        chooseFontLabel.snp.makeConstraints { maker in
+            maker.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(16)
+            maker.centerX.equalToSuperview()
+        }
+        
         collectionView.snp.makeConstraints { maker in
-            maker.top.leading.trailing.bottom.equalToSuperview()
+            maker.top.equalTo(chooseFontLabel.snp.bottom).offset(16)
+            maker.leading.trailing.bottom.equalToSuperview()
         }
         
     }
