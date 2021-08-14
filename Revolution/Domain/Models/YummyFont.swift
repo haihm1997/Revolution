@@ -12,12 +12,14 @@ struct YummyFont {
     let font: UIFont
     let name: String
     let previewContent: NSAttributedString
+    let isPremium: Bool
     
-    init(font: UIFont, name: String) {
+    init(font: UIFont, name: String, isPremium: Bool) {
         self.font = font
         self.name = name
         let dict = [NSAttributedString.Key.font: font]
         let attributedText = NSAttributedString(string: "Yummy\nPhoto", attributes: dict)
         self.previewContent = attributedText
+        self.isPremium = isPremium
     }
 }

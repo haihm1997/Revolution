@@ -77,11 +77,7 @@ class HomeViewController: BaseViewController {
     
     private func bindViewModel() {
         viewModel.outAllFonts.bind(to: collectionView.rx.items(cellIdentifier: FontPreviewCell.className, cellType: FontPreviewCell.self)) { row, element, cell in
-            if row < 20 {
-                cell.bind(data: element, state: .basic)
-            } else {
-                cell.bind(data: element, state: .premium)
-            }
+            cell.bind(data: element, state: element.isPremium ? .premium : .basic)
         }.disposed(by: rx.disposeBag)
         
         collectionView.rx.modelSelected(YummyFont.self).bind(to: didChooseFont).disposed(by: rx.disposeBag)
@@ -172,7 +168,29 @@ extension HomeViewController {
     
     var didChooseFont: Binder<YummyFont> {
         return Binder(self) { target, font in
-            target.openPhotoPicker(font: font)
+            if font.isPremium {
+                if YummyPhotoApplication.shared.isPurchased {
+                    target.openPhotoPicker(font: font)
+                } else {
+                    target.showRequestPurchaseAlert()
+                }
+            } else {
+                target.openPhotoPicker(font: font)
+            }
+            
+        }
+    }
+    
+    private func showRequestPurchaseAlert() {
+        ErrorHandler.show2OptionAlert(message: "Bạn cần đăng ký Yummy Premium để sử dụng phông chữ này",
+                                      from: self,
+                                      didDismiss: nil) { [weak self] in
+            guard let tabBarController = self?.tabBarController as? TabBarController else {
+                return
+            }
+            tabBarController.selectedIndex = 2
+            tabBarController.smartPOSTabBar.inTabItemTapped.accept(2)
+            
         }
     }
     

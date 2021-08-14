@@ -27,6 +27,43 @@
 		6460C55C26C6CA6600962B49 /* ZLEditImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6460C55126C6CA6500962B49 /* ZLEditImageViewController.swift */; };
 		6460C55D26C6CA6600962B49 /* ZLImageEditorLanguageDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6460C55226C6CA6600962B49 /* ZLImageEditorLanguageDefine.swift */; };
 		6460C55E26C6CA6600962B49 /* ZLInputTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6460C55326C6CA6600962B49 /* ZLInputTextViewController.swift */; };
+		6460C56F26C81FF800962B49 /* Yellowtail-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C56E26C81C3800962B49 /* Yellowtail-Regular.ttf */; };
+		6460C57026C81FFB00962B49 /* WindSong-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C56D26C81C3100962B49 /* WindSong-Medium.ttf */; };
+		6460C57126C81FFE00962B49 /* Sacramento-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C56C26C81C2500962B49 /* Sacramento-Regular.ttf */; };
+		6460C57226C8200000962B49 /* RockSalt-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C56B26C81C1D00962B49 /* RockSalt-Regular.ttf */; };
+		6460C57326C8200200962B49 /* PressStart2P-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C56A26C81C1500962B49 /* PressStart2P-Regular.ttf */; };
+		6460C57426C8200500962B49 /* PermanentMarker-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C56926C81C0E00962B49 /* PermanentMarker-Regular.ttf */; };
+		6460C57526C8200800962B49 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C56826C81C0700962B49 /* Pacifico-Regular.ttf */; };
+		6460C57626C8200A00962B49 /* MonteCarlo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C56726C81BF500962B49 /* MonteCarlo-Regular.ttf */; };
+		6460C57726C8200C00962B49 /* Merienda-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C56626C81BEF00962B49 /* Merienda-Bold.ttf */; };
+		6460C57826C8200E00962B49 /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C56526C81BE100962B49 /* Lobster-Regular.ttf */; };
+		6460C57926C8201000962B49 /* KaushanScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C56426C81BD900962B49 /* KaushanScript-Regular.ttf */; };
+		6460C57A26C8201400962B49 /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C56326C81BD300962B49 /* IndieFlower-Regular.ttf */; };
+		6460C57B26C8201600962B49 /* GreatVibes-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C56226C81BCD00962B49 /* GreatVibes-Regular.ttf */; };
+		6460C57C26C8201800962B49 /* GloriaHallelujah-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C56126C81BC700962B49 /* GloriaHallelujah-Regular.ttf */; };
+		6460C57D26C8201A00962B49 /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C56026C81BC100962B49 /* DancingScript-VariableFont_wght.ttf */; };
+		6460C57E26C8201D00962B49 /* ArchitectsDaughter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6460C55F26C81BB400962B49 /* ArchitectsDaughter-Regular.ttf */; };
+		6460C57F26C8202200962B49 /* Shrikhand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA58026C18BCF00A5DE9C /* Shrikhand-Regular.ttf */; };
+		6460C58026C8202500962B49 /* ShadowsIntoLightTwo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57F26C18BC900A5DE9C /* ShadowsIntoLightTwo-Regular.ttf */; };
+		6460C58126C8203900962B49 /* ReenieBeanie-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57E26C18BC300A5DE9C /* ReenieBeanie-Regular.ttf */; };
+		6460C58226C8203B00962B49 /* PinyonScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57D26C18BBE00A5DE9C /* PinyonScript-Regular.ttf */; };
+		6460C58326C8203D00962B49 /* NothingYouCouldDo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57C26C18BB700A5DE9C /* NothingYouCouldDo-Regular.ttf */; };
+		6460C58426C8203E00962B49 /* Norican-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57B26C18BB200A5DE9C /* Norican-Regular.ttf */; };
+		6460C58526C8204100962B49 /* Niconne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57A26C18BAE00A5DE9C /* Niconne-Regular.ttf */; };
+		6460C58626C8204600962B49 /* MrsSaintDelafield-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57926C18BA900A5DE9C /* MrsSaintDelafield-Regular.ttf */; };
+		6460C58726C8204800962B49 /* MrDafoe-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57826C18BA000A5DE9C /* MrDafoe-Regular.ttf */; };
+		6460C58826C8204B00962B49 /* KosugiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57526C18B9100A5DE9C /* KosugiMaru-Regular.ttf */; };
+		6460C58A26C8204F00962B49 /* Italianno-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57426C18B8900A5DE9C /* Italianno-Regular.ttf */; };
+		6460C58B26C8205300962B49 /* HerrVonMuellerhoff-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57326C18B8400A5DE9C /* HerrVonMuellerhoff-Regular.ttf */; };
+		6460C58C26C8205500962B49 /* GrandHotel-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57226C18B7F00A5DE9C /* GrandHotel-Regular.ttf */; };
+		6460C58D26C8205800962B49 /* Frijole-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57126C18B7900A5DE9C /* Frijole-Regular.ttf */; };
+		6460C58E26C8205A00962B49 /* CoveredByYourGrace-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57026C18B7300A5DE9C /* CoveredByYourGrace-Regular.ttf */; };
+		6460C58F26C8205C00962B49 /* LilitaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57726C18B9B00A5DE9C /* LilitaOne-Regular.ttf */; };
+		6460C59026C8205E00962B49 /* CinzelDecorative-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA56F26C18B6400A5DE9C /* CinzelDecorative-Regular.ttf */; };
+		6460C59126C8206000962B49 /* CinzelDecorative-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA56E26C18B5F00A5DE9C /* CinzelDecorative-Bold.ttf */; };
+		6460C59226C8206300962B49 /* Calligraffitti-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA56D26C18B5700A5DE9C /* Calligraffitti-Regular.ttf */; };
+		6460C59326C8206500962B49 /* LeckerliOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA57626C18B9500A5DE9C /* LeckerliOne-Regular.ttf */; };
+		6460C59426C8207000962B49 /* BalooChettan2-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64DAA56B26C18B4C00A5DE9C /* BalooChettan2-Bold.ttf */; };
 		6463935626B3155300AC9191 /* BottomSheetHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6463935526B3155300AC9191 /* BottomSheetHeaderView.swift */; };
 		64A6879526B68C3B00D58B3E /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A6879426B68C3B00D58B3E /* AddView.swift */; };
 		64B8CE6726BC532C002948F2 /* IAPViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B8CE6626BC532C002948F2 /* IAPViews.swift */; };
@@ -139,6 +176,22 @@
 		6460C55126C6CA6500962B49 /* ZLEditImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLEditImageViewController.swift; sourceTree = "<group>"; };
 		6460C55226C6CA6600962B49 /* ZLImageEditorLanguageDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLImageEditorLanguageDefine.swift; sourceTree = "<group>"; };
 		6460C55326C6CA6600962B49 /* ZLInputTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLInputTextViewController.swift; sourceTree = "<group>"; };
+		6460C55F26C81BB400962B49 /* ArchitectsDaughter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ArchitectsDaughter-Regular.ttf"; sourceTree = "<group>"; };
+		6460C56026C81BC100962B49 /* DancingScript-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		6460C56126C81BC700962B49 /* GloriaHallelujah-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GloriaHallelujah-Regular.ttf"; sourceTree = "<group>"; };
+		6460C56226C81BCD00962B49 /* GreatVibes-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GreatVibes-Regular.ttf"; sourceTree = "<group>"; };
+		6460C56326C81BD300962B49 /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
+		6460C56426C81BD900962B49 /* KaushanScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KaushanScript-Regular.ttf"; sourceTree = "<group>"; };
+		6460C56526C81BE100962B49 /* Lobster-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster-Regular.ttf"; sourceTree = "<group>"; };
+		6460C56626C81BEF00962B49 /* Merienda-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merienda-Bold.ttf"; sourceTree = "<group>"; };
+		6460C56726C81BF500962B49 /* MonteCarlo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MonteCarlo-Regular.ttf"; sourceTree = "<group>"; };
+		6460C56826C81C0700962B49 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
+		6460C56926C81C0E00962B49 /* PermanentMarker-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PermanentMarker-Regular.ttf"; sourceTree = "<group>"; };
+		6460C56A26C81C1500962B49 /* PressStart2P-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PressStart2P-Regular.ttf"; sourceTree = "<group>"; };
+		6460C56B26C81C1D00962B49 /* RockSalt-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RockSalt-Regular.ttf"; sourceTree = "<group>"; };
+		6460C56C26C81C2500962B49 /* Sacramento-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sacramento-Regular.ttf"; sourceTree = "<group>"; };
+		6460C56D26C81C3100962B49 /* WindSong-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WindSong-Medium.ttf"; sourceTree = "<group>"; };
+		6460C56E26C81C3800962B49 /* Yellowtail-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yellowtail-Regular.ttf"; sourceTree = "<group>"; };
 		6463935526B3155300AC9191 /* BottomSheetHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetHeaderView.swift; sourceTree = "<group>"; };
 		64A6879426B68C3B00D58B3E /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		64B8CE6626BC532C002948F2 /* IAPViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPViews.swift; sourceTree = "<group>"; };
@@ -148,10 +201,7 @@
 		64DAA55A26C1836300A5DE9C /* JLStickerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStickerImageView.swift; sourceTree = "<group>"; };
 		64DAA55B26C1836300A5DE9C /* JLStickerLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLStickerLabelView.swift; sourceTree = "<group>"; };
 		64DAA55C26C1836300A5DE9C /* CalcuteFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcuteFunctions.swift; sourceTree = "<group>"; };
-		64DAA56926C18B3500A5DE9C /* AlexBrush-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlexBrush-Regular.ttf"; sourceTree = "<group>"; };
-		64DAA56A26C18B4000A5DE9C /* AlexBrush-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AlexBrush-Regular.ttf"; path = "../../../../../../Desktop/Yummy Font/Alex_Brush 2/AlexBrush-Regular.ttf"; sourceTree = "<group>"; };
 		64DAA56B26C18B4C00A5DE9C /* BalooChettan2-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalooChettan2-Bold.ttf"; sourceTree = "<group>"; };
-		64DAA56C26C18B5200A5DE9C /* BalooChettan2-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalooChettan2-ExtraBold.ttf"; sourceTree = "<group>"; };
 		64DAA56D26C18B5700A5DE9C /* Calligraffitti-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calligraffitti-Regular.ttf"; sourceTree = "<group>"; };
 		64DAA56E26C18B5F00A5DE9C /* CinzelDecorative-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CinzelDecorative-Bold.ttf"; sourceTree = "<group>"; };
 		64DAA56F26C18B6400A5DE9C /* CinzelDecorative-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CinzelDecorative-Regular.ttf"; sourceTree = "<group>"; };
@@ -803,6 +853,22 @@
 		BCB37A7526A87D71008BF43A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				6460C56E26C81C3800962B49 /* Yellowtail-Regular.ttf */,
+				6460C56D26C81C3100962B49 /* WindSong-Medium.ttf */,
+				6460C56C26C81C2500962B49 /* Sacramento-Regular.ttf */,
+				6460C56B26C81C1D00962B49 /* RockSalt-Regular.ttf */,
+				6460C56A26C81C1500962B49 /* PressStart2P-Regular.ttf */,
+				6460C56926C81C0E00962B49 /* PermanentMarker-Regular.ttf */,
+				6460C56826C81C0700962B49 /* Pacifico-Regular.ttf */,
+				6460C56726C81BF500962B49 /* MonteCarlo-Regular.ttf */,
+				6460C56626C81BEF00962B49 /* Merienda-Bold.ttf */,
+				6460C56526C81BE100962B49 /* Lobster-Regular.ttf */,
+				6460C56426C81BD900962B49 /* KaushanScript-Regular.ttf */,
+				6460C56326C81BD300962B49 /* IndieFlower-Regular.ttf */,
+				6460C56226C81BCD00962B49 /* GreatVibes-Regular.ttf */,
+				6460C56126C81BC700962B49 /* GloriaHallelujah-Regular.ttf */,
+				6460C56026C81BC100962B49 /* DancingScript-VariableFont_wght.ttf */,
+				6460C55F26C81BB400962B49 /* ArchitectsDaughter-Regular.ttf */,
 				64DAA58026C18BCF00A5DE9C /* Shrikhand-Regular.ttf */,
 				64DAA57F26C18BC900A5DE9C /* ShadowsIntoLightTwo-Regular.ttf */,
 				64DAA57E26C18BC300A5DE9C /* ReenieBeanie-Regular.ttf */,
@@ -813,7 +879,6 @@
 				64DAA57926C18BA900A5DE9C /* MrsSaintDelafield-Regular.ttf */,
 				64DAA57826C18BA000A5DE9C /* MrDafoe-Regular.ttf */,
 				64DAA57526C18B9100A5DE9C /* KosugiMaru-Regular.ttf */,
-				64DAA56A26C18B4000A5DE9C /* AlexBrush-Regular.ttf */,
 				64DAA57426C18B8900A5DE9C /* Italianno-Regular.ttf */,
 				64DAA57326C18B8400A5DE9C /* HerrVonMuellerhoff-Regular.ttf */,
 				64DAA57226C18B7F00A5DE9C /* GrandHotel-Regular.ttf */,
@@ -823,10 +888,8 @@
 				64DAA56F26C18B6400A5DE9C /* CinzelDecorative-Regular.ttf */,
 				64DAA56E26C18B5F00A5DE9C /* CinzelDecorative-Bold.ttf */,
 				64DAA56D26C18B5700A5DE9C /* Calligraffitti-Regular.ttf */,
-				64DAA56C26C18B5200A5DE9C /* BalooChettan2-ExtraBold.ttf */,
 				64DAA57626C18B9500A5DE9C /* LeckerliOne-Regular.ttf */,
 				64DAA56B26C18B4C00A5DE9C /* BalooChettan2-Bold.ttf */,
-				64DAA56926C18B3500A5DE9C /* AlexBrush-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -962,8 +1025,45 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6460C59326C8206500962B49 /* LeckerliOne-Regular.ttf in Resources */,
+				6460C57A26C8201400962B49 /* IndieFlower-Regular.ttf in Resources */,
+				6460C58726C8204800962B49 /* MrDafoe-Regular.ttf in Resources */,
+				6460C58226C8203B00962B49 /* PinyonScript-Regular.ttf in Resources */,
+				6460C58A26C8204F00962B49 /* Italianno-Regular.ttf in Resources */,
+				6460C57526C8200800962B49 /* Pacifico-Regular.ttf in Resources */,
+				6460C57826C8200E00962B49 /* Lobster-Regular.ttf in Resources */,
+				6460C57226C8200000962B49 /* RockSalt-Regular.ttf in Resources */,
+				6460C58D26C8205800962B49 /* Frijole-Regular.ttf in Resources */,
+				6460C58126C8203900962B49 /* ReenieBeanie-Regular.ttf in Resources */,
+				6460C58E26C8205A00962B49 /* CoveredByYourGrace-Regular.ttf in Resources */,
+				6460C59026C8205E00962B49 /* CinzelDecorative-Regular.ttf in Resources */,
 				BC481DBA26A5CB8500C8A9AE /* LaunchScreen.storyboard in Resources */,
+				6460C57426C8200500962B49 /* PermanentMarker-Regular.ttf in Resources */,
+				6460C57926C8201000962B49 /* KaushanScript-Regular.ttf in Resources */,
+				6460C58F26C8205C00962B49 /* LilitaOne-Regular.ttf in Resources */,
+				6460C57E26C8201D00962B49 /* ArchitectsDaughter-Regular.ttf in Resources */,
+				6460C56F26C81FF800962B49 /* Yellowtail-Regular.ttf in Resources */,
+				6460C58826C8204B00962B49 /* KosugiMaru-Regular.ttf in Resources */,
+				6460C57B26C8201600962B49 /* GreatVibes-Regular.ttf in Resources */,
+				6460C57D26C8201A00962B49 /* DancingScript-VariableFont_wght.ttf in Resources */,
+				6460C59126C8206000962B49 /* CinzelDecorative-Bold.ttf in Resources */,
+				6460C57626C8200A00962B49 /* MonteCarlo-Regular.ttf in Resources */,
+				6460C58326C8203D00962B49 /* NothingYouCouldDo-Regular.ttf in Resources */,
+				6460C57026C81FFB00962B49 /* WindSong-Medium.ttf in Resources */,
+				6460C58426C8203E00962B49 /* Norican-Regular.ttf in Resources */,
 				BC481DB726A5CB8500C8A9AE /* Assets.xcassets in Resources */,
+				6460C58526C8204100962B49 /* Niconne-Regular.ttf in Resources */,
+				6460C57126C81FFE00962B49 /* Sacramento-Regular.ttf in Resources */,
+				6460C59426C8207000962B49 /* BalooChettan2-Bold.ttf in Resources */,
+				6460C58026C8202500962B49 /* ShadowsIntoLightTwo-Regular.ttf in Resources */,
+				6460C58C26C8205500962B49 /* GrandHotel-Regular.ttf in Resources */,
+				6460C57726C8200C00962B49 /* Merienda-Bold.ttf in Resources */,
+				6460C57F26C8202200962B49 /* Shrikhand-Regular.ttf in Resources */,
+				6460C58B26C8205300962B49 /* HerrVonMuellerhoff-Regular.ttf in Resources */,
+				6460C59226C8206300962B49 /* Calligraffitti-Regular.ttf in Resources */,
+				6460C57326C8200200962B49 /* PressStart2P-Regular.ttf in Resources */,
+				6460C57C26C8201800962B49 /* GloriaHallelujah-Regular.ttf in Resources */,
+				6460C58626C8204600962B49 /* MrsSaintDelafield-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

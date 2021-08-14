@@ -35,13 +35,15 @@ class HomeViewModel: BaseViewModel {
         super.init()
         
         var tempFonts: [YummyFont] = []
-        for family in UIFont.familyNames.sorted() {
-            let names = UIFont.fontNames(forFamilyName: family)
+        UIFont.familyNames.enumerated().forEach { index, item in
+            let names = UIFont.fontNames(forFamilyName: item)
             names.forEach {
                 print("HomeViewModel Font: \($0)")
                 tempFonts.append(YummyFont(font: UIFont(name: $0, size: 30) ?? UIFont.systemFont(ofSize: 26),
-                                           name: $0))
+                                           name: $0,
+                                           isPremium: index > 15))
             }
+            
         }
         outAllFonts.accept(tempFonts)
     }

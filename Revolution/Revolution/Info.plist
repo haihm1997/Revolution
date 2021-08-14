@@ -40,7 +40,6 @@
         <string>MrsSaintDelafield-Regular.ttf</string>
         <string>MrDafoe-Regular.ttf</string>
         <string>KosugiMaru-Regular.ttf</string>
-        <string>AlexBrush-Regular.ttf</string>
         <string>Italianno-Regular.ttf</string>
         <string>HerrVonMuellerhoff-Regular.ttf</string>
         <string>GrandHotel-Regular.ttf</string>
@@ -54,6 +53,21 @@
         <string>LeckerliOne-Regular.ttf</string>
         <string>BalooChettan2-Bold.ttf</string>
         <string>AlexBrush-Regular.ttf</string>
+        <string>Yellowtail-Regular.ttf</string>
+        <string>WindSong-Medium.ttf</string>
+        <string>Sacramento-Regular.ttf</string>
+        <string>RockSalt-Regular.ttf</string>
+        <string>PressStart2P-Regular.ttf</string>
+        <string>PermanentMarker-Regular.ttf</string>
+        <string>Pacifico-Regular.ttf</string>
+        <string>MonteCarlo-Regular.ttf</string>
+        <string>Lobster-Regular.ttf</string>
+        <string>KaushanScript-Regular.ttf</string>
+        <string>IndieFlower-Regular.ttf</string>
+        <string>GreatVibes-Regular.ttf</string>
+        <string>GloriaHallelujah-Regular.ttf</string>
+        <string>DancingScript-VariableFont_wght.ttf</string>
+        <string>ArchitectsDaughter-Regular.ttf</string>
     </array>
     <key>UIApplicationSupportsIndirectInputEvents</key>
     <true/>
