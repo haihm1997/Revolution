@@ -40,9 +40,8 @@ class ProfileViewModel: BaseViewModel {
             .disposed(by: rx.disposeBag)
         
         inRestoreProduct
-            .flatMap {  profileUseCase.restorePremium()
+            .flatMap { profileUseCase.restorePremium()
                 .asObservable()
-                .trackActivity(LOADING_KEY, with: activityTracker)
                 .trackError(with: errorTracker)
             }
             .bind(to: outDidRestoreProduct)

@@ -138,7 +138,7 @@ extension IAPManager: SKPaymentTransactionObserver {
                     } else {
                         onBuyProductHandler?(.failure(RevolutionError.paymentWasCancelled))
                     }
-                    print("IAP Error:", error.localizedDescription)
+                    onProductRestoreHandler?(0)
                 }
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .deferred, .purchasing: break
