@@ -25,16 +25,17 @@ class YummyPhotoApplication {
     }
     
     func verifyPurchasing() {
-        let userDefault = UserDefaults.standard
-        guard let isPurchased = userDefault.value(forKey: "isPurchased") as? Bool else {
-            IAPManager.shared.verifyReceipt()
-            return
-        }
-        if isPurchased {
-            self.isPurchased = isPurchased
-        } else {
-            IAPManager.shared.verifyReceipt()
-        }
+//        let userDefault = UserDefaults.standard
+//        guard let isPurchased = userDefault.value(forKey: "isPurchased") as? Bool else {
+//            IAPManager.shared.verifyReceipt()
+//            return
+//        }
+//        if isPurchased {
+//            self.isPurchased = isPurchased
+//        } else {
+//            IAPManager.shared.verifyReceipt()
+//        }
+        
     }
     
 }
