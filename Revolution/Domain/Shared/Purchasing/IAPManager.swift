@@ -14,7 +14,6 @@ let premiumProductID = "com.photo.yummy_photo.premium"
 
 typealias BuyProductHandler = ((Result<Bool, Error>) -> Void)
 typealias OnReceivedProductsHandler = ((Result<[SKProduct], RevolutionError>) -> Void)
-typealias OnProductRestoreHandler = ((Int) -> Void)
 
 class IAPManager: NSObject {
     
@@ -23,9 +22,7 @@ class IAPManager: NSObject {
     var onReceiveProductsHandler: OnReceivedProductsHandler?
     
     var onBuyProductHandler: BuyProductHandler?
-    
-    var onProductRestoreHandler: OnProductRestoreHandler?
-    
+        
     var totalRestoredPurchases = 0
     
     var premiumProducts: [SKProduct] = []
@@ -68,8 +65,8 @@ class IAPManager: NSObject {
         onBuyProductHandler = handler
     }
     
-    func restorePurchases(withHandler handler: @escaping OnProductRestoreHandler) {
-        onProductRestoreHandler = handler
+    func restorePurchases(withHandler handler: @escaping BuyProductHandler) {
+        onBuyProductHandler = handler
         totalRestoredPurchases = 0
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
@@ -138,7 +135,6 @@ extension IAPManager: SKPaymentTransactionObserver {
                     } else {
                         onBuyProductHandler?(.failure(RevolutionError.paymentWasCancelled))
                     }
-                    onProductRestoreHandler?(0)
                 }
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .deferred, .purchasing: break
@@ -148,7 +144,12 @@ extension IAPManager: SKPaymentTransactionObserver {
     }
     
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        onProductRestoreHandler?(totalRestoredPurchases)
+        if totalRestoredPurchases != 0 {
+            onBuyProductHandler?(.success(true))
+        } else {
+            print("IAP: No purchases to restore!")
+            onBuyProductHandler?(.success(false))
+        }
     }
     
 }

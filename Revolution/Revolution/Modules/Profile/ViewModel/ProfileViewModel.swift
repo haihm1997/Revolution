@@ -75,8 +75,15 @@ class ProfileUseCase {
     
     func restorePremium() -> Single<Bool> {
         return Single.create { single in
-            IAPManager.shared.restorePurchases { restoredProducts in
-                single(.success(restoredProducts > 0))
+            IAPManager.shared.restorePurchases { result in
+                switch result {
+                case .success(let status):
+                    single(.success(status))
+                    YummyPhotoApplication.shared.isPurchased = status
+                case .failure:
+                    single(.success(false))
+                    YummyPhotoApplication.shared.isPurchased = false
+                }
             }
             return Disposables.create()
         }

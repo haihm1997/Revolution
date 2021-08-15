@@ -153,6 +153,7 @@ extension ProfileViewController {
     var didRestoreProductsBinder: Binder<Bool> {
         return Binder(self) { target, isPremium in
             target.updateState(isPremium: isPremium)
+            ErrorHandler.showDefaultAlert(message: "Hoàn thành!", from: target, didDismiss: nil)
         }
     }
     
