@@ -14,6 +14,7 @@ target 'Revolution' do
     pod 'RxDataSources'
     pod 'YPImagePicker'
     pod 'Toast-Swift', '~> 5.0.1'
+    pod 'PanModal'
 
   target 'RevolutionTests' do
     inherit! :search_paths

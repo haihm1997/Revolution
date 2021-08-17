@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import SnapKit
+import PanModal
 
 class ProfileViewController: BaseViewController {
     
@@ -135,11 +136,11 @@ extension ProfileViewController {
     
     var didTapPurchase: Binder<Void> {
         return Binder(self) { target, _ in
-            ErrorHandler.show2OptionAlert(message: "Sẵn sàng để trải nghiệm những tính năng tuyệt vời với Yummy Premium.",
-                                          positiveTitleButton: "Đồng ý",
-                                          from: target, didDismiss: nil) { [weak self] in
-                self?.viewModel.inPurchasePremium.accept(())
+            let premiumVC = PremiumRegisterViewController()
+            premiumVC.didTapPurchase = {
+                target.viewModel.inPurchasePremium.accept(())
             }
+            target.presentPanModal(premiumVC)
         }
     }
     
@@ -155,6 +156,21 @@ extension ProfileViewController {
             target.updateState(isPremium: isPremium)
             ErrorHandler.showDefaultAlert(message: "Hoàn thành!", from: target, didDismiss: nil)
         }
+    }
+    
+}
+
+extension String {
+    
+    func attributedText(boldStrings: String..., font: UIFont, boldFontWeight: UIFont.Weight = .semibold) -> NSAttributedString {
+        let attributedString = NSMutableAttributedString(string: self,
+                                                         attributes: [NSAttributedString.Key.font: font])
+        let boldFontAttribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: font.pointSize, weight: boldFontWeight)]
+        boldStrings.forEach {
+            let range = (self as NSString).range(of: $0)
+            attributedString.addAttributes(boldFontAttribute, range: range)
+        }
+        return attributedString
     }
     
 }

@@ -4,6 +4,7 @@ PODS:
   - MBProgressHUD (1.2.0)
   - "NSObject+Rx (5.1.0)":
     - RxSwift (~> 5.1)
+  - PanModal (1.2.7)
   - PryntTrimmerView (4.0.2)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - Alamofire (~> 5.2)
   - MBProgressHUD (~> 1.2.0)
   - "NSObject+Rx"
+  - PanModal
   - RxCocoa (~> 5)
   - RxDataSources
   - RxSwift (~> 5)
@@ -39,6 +41,7 @@ SPEC REPOS:
     - Differentiator
     - MBProgressHUD
     - "NSObject+Rx"
+    - PanModal
     - PryntTrimmerView
     - RxCocoa
     - RxDataSources
@@ -54,6 +57,7 @@ SPEC CHECKSUMS:
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
@@ -64,6 +68,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
 
-PODFILE CHECKSUM: c0ce9480f9ba79e29b92448238e4e9464790fd5a
+PODFILE CHECKSUM: ab1d16ccd9bc92b376184a7ec7dbfbec941a3d87
 
 COCOAPODS: 1.10.2

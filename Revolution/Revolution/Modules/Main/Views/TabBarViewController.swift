@@ -131,6 +131,17 @@ extension TabBarController {
         config.hidesCancelButton = false
         config.preferredStatusBarStyle = UIStatusBarStyle.default
         config.maxCameraZoomFactor = 1.0
+        
+        config.wordings.cancel = "Đóng"
+        config.wordings.done = "Xong"
+        config.wordings.next = "Tiếp tục"
+        config.wordings.ok = "Đồng ý"
+        config.wordings.save = "Lưu"
+        config.wordings.warningMaxItemsLimit = "Tổng số ảnh và video được chọn không được vượt quá %d"
+        config.wordings.permissionPopup.cancel = "Đóng"
+        config.wordings.permissionPopup.grantPermission = "Cho phép truy cập"
+        config.wordings.permissionPopup.message = "Vui lòng cho phép Yummy Photo truy cập"
+        config.wordings.permissionPopup.title = "Truy cập bị từ chối"
     
         return config
     }
