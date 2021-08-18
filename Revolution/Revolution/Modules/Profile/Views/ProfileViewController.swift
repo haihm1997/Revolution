@@ -98,7 +98,7 @@ class ProfileViewController: BaseViewController {
             .bind(to: didTapPurchase)
             .disposed(by: rx.disposeBag)
         restoreView.button.rx.tap
-            .bind(to: viewModel.inRestoreProduct)
+            .bind(to: didTapTermConditionBinder)
             .disposed(by: rx.disposeBag)
         viewModel.outActivity.bind(to: loadingBinder).disposed(by: rx.disposeBag)
         viewModel.outError.bind(to: didReceivedPurhaseError).disposed(by: rx.disposeBag)
@@ -110,7 +110,6 @@ class ProfileViewController: BaseViewController {
         basicPlanView.isHidden = isPremium
         premiumPlanView.isHidden = !isPremium
         premiumView.isHidden = isPremium
-        restoreView.isHidden = isPremium
         bannerImage.image = isPremium ? UIImage(name: .premiun) : UIImage(name: .basic)
         centerImage.image = isPremium ? UIImage(name: .icPremium) : UIImage(name: .icBasic)
     }
@@ -140,8 +139,40 @@ extension ProfileViewController {
             premiumVC.didTapPurchase = {
                 target.viewModel.inPurchasePremium.accept(())
             }
+            premiumVC.didTapRestore = {
+                target.viewModel.inRestoreProduct.accept(())
+            }
             target.presentPanModal(premiumVC)
         }
+    }
+    
+    var didTapTermConditionBinder: Binder<Void> {
+        return Binder(self) { target, _ in
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            
+            alert.addAction(UIAlertAction(title: "Điều khoản sử dụng", style: .default , handler:{ (UIAlertAction)in
+                target.openWebView(title: "Điều khoản sử dụng",
+                                   url: "https://tngstudio.blogspot.com/2021/07/terms-of-vip-service.html")
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Chính sách bảo mật", style: .default , handler:{ (UIAlertAction)in
+                target.openWebView(title: "Chính sách bảo mật",
+                                   url: "https://tngstudio.blogspot.com/2021/07/policy.html")
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Đóng", style: .cancel, handler:{ (UIAlertAction)in
+                print("User click Dismiss button")
+            }))
+            
+            target.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    private func openWebView(title: String, url: String) {
+        let webVC = YummyWebView()
+        webVC.title = title
+        webVC.urlStr = url
+        self.present(webVC, animated: true, completion: nil)
     }
     
     var didReceivedPurhaseError: Binder<RevolutionError> {

@@ -17,17 +17,19 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Cho phép Yummy Photo sử dụng Camera của bạn</string>
+	<string>Cho phép Yummy Photo sử dụng Camera của bạn phục vụ tính năng chụp ảnh </string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Cho phép Yummy Photo sử dụng Camera của bạn</string>
+	<string>Cho phép Yummy Photo sử dụng Microphone của bạn phục vụ cho tính năng quay phim</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Cho phép Yummy Photo truy cập thư viện của bạn</string>
+	<string>Cho phép Yummy Photo truy cập thư viện của bạn để hiển thị ảnh từ thư viện</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Cho phép Yummy Photo sử dụng Camera của bạn</string>
+	<string>Cho phép Yummy Photo truy cập thư viện của bạn để hiển thị ảnh từ thư viện</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Shrikhand-Regular.ttf</string>
@@ -90,7 +92,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>ITSAppUsesNonExemptEncryption</key>
-    <false/>
 </dict>
 </plist>

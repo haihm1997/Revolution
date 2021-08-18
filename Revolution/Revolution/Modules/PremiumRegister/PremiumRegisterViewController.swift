@@ -22,7 +22,7 @@ class PremiumRegisterViewController: UIViewController {
     }
     
     let titleLabel = configure(UILabel()) {
-        $0.text = "Đăng ký Yummy Premium"
+        $0.text = "Yummy Weekly Premium"
         $0.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         $0.textColor = .textPrimary
     }
@@ -37,16 +37,27 @@ class PremiumRegisterViewController: UIViewController {
     }
     
     let contentLabel = configure(UILabel()) {
-        let content = "Sẵn sàng để trải nghiệm những tính năng tuyệt vời cùng Yummy Premium.\n \nMiễn phí sử dụng 3 ngày đầu"
+        let price = IAPManager.shared.premiumProducts.first?.getPriceFormatted() ?? ""
+        let content = "Sẵn sàng để trải nghiệm những tính năng tuyệt vời cùng Yummy Premium.\n \nMiễn phí sử dụng 3 ngày đầu\n(Sau đó hệ thống sẽ tự động gia hạn phí \(price) cho mỗi tuần)"
         let part = "Miễn phí sử dụng 3 ngày đầu"
-        $0.attributedText = content.attributedText(boldStrings: part, font: UIFont.systemFont(ofSize: 15, weight: .regular))
+        $0.attributedText = content.attributedText(boldStrings: part, price, font: UIFont.systemFont(ofSize: 15, weight: .regular))
         $0.textColor = .textSecondary
         $0.textAlignment = .center
         $0.numberOfLines = 0
     }
     
     let registerButton = configure(UIButton()) {
-        $0.setTitle("129.000đ / Tuần", for: .normal)
+        let price = IAPManager.shared.premiumProducts.first?.getPriceFormatted() ?? ""
+        let title = price.contains("129.000") ? "\(price) / Tuần" : "\(price) / Week"
+        $0.setTitle(title, for: .normal)
+        $0.backgroundColor = .primary
+        $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        $0.layer.cornerRadius = 20
+    }
+    
+    let restoreButton = configure(UIButton()) {
+        $0.setTitle("Khôi phục", for: .normal)
         $0.backgroundColor = .primary
         $0.setTitleColor(.white, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
@@ -54,6 +65,8 @@ class PremiumRegisterViewController: UIViewController {
     }
     
     var didTapPurchase: (() -> Void)?
+    
+    var didTapRestore: (() -> Void)?
     
     override func loadView() {
         super.loadView()
@@ -83,10 +96,17 @@ class PremiumRegisterViewController: UIViewController {
             maker.leading.trailing.equalToSuperview().inset(32)
         }
         
+        containerView.addSubview(restoreButton)
+        restoreButton.snp.makeConstraints { maker in
+            maker.leading.trailing.equalToSuperview().inset(24)
+            maker.bottom.equalToSuperview().inset(16 + Constant.SafeArea.bottomPadding)
+            maker.height.equalTo(44)
+        }
+        
         containerView.addSubview(registerButton)
         registerButton.snp.makeConstraints { maker in
             maker.leading.trailing.equalToSuperview().inset(24)
-            maker.bottom.equalToSuperview().inset(16 + Constant.SafeArea.bottomPadding)
+            maker.bottom.equalToSuperview().inset(70 + Constant.SafeArea.bottomPadding)
             maker.height.equalTo(44)
             maker.top.equalTo(contentLabel.snp.bottom).offset(32)
         }
@@ -101,11 +121,19 @@ class PremiumRegisterViewController: UIViewController {
         super.viewDidLoad()
         registerButton.rx.tap.bind(to: didTapPurchaseBinder).disposed(by: rx.disposeBag)
         closeButton.rx.tap.bind(to: didTapCloseBinder).disposed(by: rx.disposeBag)
+        restoreButton.rx.tap.bind(to: didTapRestoreBinder).disposed(by: rx.disposeBag)
     }
     
     var didTapPurchaseBinder: Binder<Void> {
         return Binder(self) { target, _ in
             target.didTapPurchase?()
+            target.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    var didTapRestoreBinder: Binder<Void> {
+        return Binder(self) { target, _ in
+            target.didTapRestore?()
             target.dismiss(animated: true, completion: nil)
         }
     }

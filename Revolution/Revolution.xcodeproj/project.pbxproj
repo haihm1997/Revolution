@@ -76,6 +76,7 @@
 		64DAA56126C1836400A5DE9C /* JLStickerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAA55A26C1836300A5DE9C /* JLStickerImageView.swift */; };
 		64DAA58226C1957C00A5DE9C /* FontPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAA58126C1957C00A5DE9C /* FontPreviewCell.swift */; };
 		64DAA58426C19A7100A5DE9C /* YummyFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DAA58326C19A7100A5DE9C /* YummyFont.swift */; };
+		64E7714E26CD5B0D001BFD0A /* YummyWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E7714D26CD5B0D001BFD0A /* YummyWebView.swift */; };
 		834447D28808EA23240345E6 /* Pods_Revolution.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26916F38FB6D507CA0E943C /* Pods_Revolution.framework */; };
 		BC481DAE26A5CB8400C8A9AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC481DAD26A5CB8400C8A9AE /* AppDelegate.swift */; };
 		BC481DB726A5CB8500C8A9AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC481DB626A5CB8500C8A9AE /* Assets.xcassets */; };
@@ -226,6 +227,7 @@
 		64DAA58026C18BCF00A5DE9C /* Shrikhand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shrikhand-Regular.ttf"; sourceTree = "<group>"; };
 		64DAA58126C1957C00A5DE9C /* FontPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPreviewCell.swift; sourceTree = "<group>"; };
 		64DAA58326C19A7100A5DE9C /* YummyFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyFont.swift; sourceTree = "<group>"; };
+		64E7714D26CD5B0D001BFD0A /* YummyWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyWebView.swift; sourceTree = "<group>"; };
 		86FD2FD925AD14FA8D365DC1 /* Pods_Revolution_RevolutionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Revolution_RevolutionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A38243651311E406480C52 /* Pods-Revolution.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Revolution.debug.xcconfig"; path = "Target Support Files/Pods-Revolution/Pods-Revolution.debug.xcconfig"; sourceTree = "<group>"; };
 		BC481DAA26A5CB8400C8A9AE /* Yummy Photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yummy Photo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -395,6 +397,14 @@
 			path = ImageEditor;
 			sourceTree = "<group>";
 		};
+		64E7714C26CD5B02001BFD0A /* YummyWebView */ = {
+			isa = PBXGroup;
+			children = (
+				64E7714D26CD5B0D001BFD0A /* YummyWebView.swift */,
+			);
+			path = YummyWebView;
+			sourceTree = "<group>";
+		};
 		BC481DA126A5CB8400C8A9AE = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +489,7 @@
 		BC481DF426A5D1DB00C8A9AE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				64E7714C26CD5B02001BFD0A /* YummyWebView */,
 				6415F6E226CC048700A19230 /* PremiumRegister */,
 				BCB37A6C26A87BAE008BF43A /* Profile */,
 				BCB37A5C26A87A27008BF43A /* CommonView */,
@@ -1208,6 +1219,7 @@
 				6460C55C26C6CA6600962B49 /* ZLEditImageViewController.swift in Sources */,
 				BC481E1526A5D25900C8A9AE /* BaseCustomView.swift in Sources */,
 				BC64A0B726A9BEDD008ECAAE /* ImageCell.swift in Sources */,
+				64E7714E26CD5B0D001BFD0A /* YummyWebView.swift in Sources */,
 				64DAA56026C1836400A5DE9C /* CalcuteFunctions.swift in Sources */,
 				BC481E1426A5D25900C8A9AE /* BaseViewController.swift in Sources */,
 				BC481E7D26A5D39A00C8A9AE /* MovieDetailModel.swift in Sources */,
@@ -1456,6 +1468,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = K3YRDR3TB9;
 				INFOPLIST_FILE = Revolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -1479,6 +1492,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = K3YRDR3TB9;
 				INFOPLIST_FILE = Revolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;

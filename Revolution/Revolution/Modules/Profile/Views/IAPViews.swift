@@ -55,13 +55,13 @@ class PremiumView: BaseCustomView {
 class RestoreView: BaseCustomView {
     
     let premiumLabel = configure(UILabel()) {
-        $0.text = "Restore"
+        $0.text = "Chính sách"
         $0.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         $0.textColor = .gray
     }
     
     let premiumIcon = configure(UIImageView()) {
-        $0.image = UIImage(name: .icRestore)
+        $0.image = UIImage(named: "ic_security")
         $0.contentMode = .scaleAspectFit
         $0.backgroundColor = .clear
     }

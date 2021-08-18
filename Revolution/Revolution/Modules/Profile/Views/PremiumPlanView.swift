@@ -26,7 +26,7 @@ class PremiumContentView: BaseCustomView {
         self.addSubviews(tickImageView, contentLabel)
         tickImageView.snp.makeConstraints { maker in
             maker.leading.equalToSuperview()
-            maker.width.height.equalTo(12)
+            maker.width.height.equalTo(14)
             maker.top.equalToSuperview().inset(4)
         }
         
